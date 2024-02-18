@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Users xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="users_schema.xsd">
+  <Admin>
+    <Name>Admin User</Name>
+    <ID>123</ID>
+    <Email>admin@example.com</Email>
+    <Password>adminpass</Password>
+  </Admin>
+  <Teacher>
+    <Name>John Smith</Name>
+    <ID>456</ID>
+    <Email>john.smith@example.com</Email>
+    <Password>teacherpass</Password>
+    <Class>Math101</Class>
+  </Teacher>
+  <Teacher>
+    <Name>Sarah Johnson</Name>
+    <ID>789</ID>
+    <Email>sarah.johnson@example.com</Email>
+    <Password>teacherpass</Password>
+    <Class>English101</Class>
+  </Teacher>
+  <Student>
+    <Name>Emma Watson</Name>
+    <ID>101</ID>
+    <Email>emma.watson@example.com</Email>
+    <Password>studentpass</Password>
+    <Class>Math101</Class>
+  </Student>
+  <Student>
+    <Name>Michael Brown</Name>
+    <ID>102</ID>
+    <Email>michael.brown@example.com</Email>
+    <Password>studentpass</Password>
+    <Class>English101</Class>
+  </Student>
+  <Student>
+    <Name>New Student</Name>
+    <ID>103</ID>
+    <Email>new.student@example.com</Email>
+    <Password>newstudentpass</Password>
+    <Class>Science101</Class>
+  </Student>
+</Users>
