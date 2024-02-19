@@ -121,23 +121,23 @@ namespace Attendance_Management_System.Forms
             string pass = textBoxPassword.Text.Trim();
             if (username != string.Empty && pass != string.Empty)
             {
-                string role = isValidNamePass(username, pass);
-                if (role != string.Empty)
-                {
-                    MainForm mainForm = new MainForm();
-                    textBoxName.Clear();
-                    textBoxPassword.Clear();
-                    pictureBoxHide_click(sender, e);
-                    textBoxName.Focus();
-                    pictureBoxError.Hide();
-                    labelError.Hide();
-                    mainForm.ShowDialog();
-                }
-                else
-                {
-                    pictureBoxError.Show();
-                    labelError.Show();
-                }
+                ////string role = isValidNamePass(username, pass);
+                //if (role != string.Empty)
+                //{
+                //    //MainForm mainForm = new MainForm();
+                //    textBoxName.Clear();
+                //    textBoxPassword.Clear();
+                //    pictureBoxHide_click(sender, e);
+                //    textBoxName.Focus();
+                //    pictureBoxError.Hide();
+                //    labelError.Hide();
+                //    //mainForm.ShowDialog();
+                //}
+                //else
+                //{
+                //    pictureBoxError.Show();
+                //    labelError.Show();
+                //}
             }
 
         }
