@@ -143,7 +143,7 @@ namespace Attendance_Management_System.Forms
             {
                 // Create a temporary XDocument with the updated student data
                 var updatedStudentDocument = new XDocument(
-                    
+
                         new XElement("Student",
                             new XElement("Name", textBoxUpName.Text.Trim()),
                             new XElement("ID", textBoxUpID.Text.Trim()),
@@ -151,7 +151,7 @@ namespace Attendance_Management_System.Forms
                             new XElement("Password", textBoxUpPass.Text.Trim()),
                             new XElement("Class", comboBoxUpClass.SelectedItem.ToString())
                         )
-                    
+
                 );
 
                 // Validate the temporary document against the schema
@@ -196,7 +196,7 @@ namespace Attendance_Management_System.Forms
 
                 return true;
             }
-            catch (Exception ex) 
+            catch (Exception ex)
             {
                 MessageBox.Show("XML validation error: " + ex.Message);
 
@@ -255,6 +255,9 @@ namespace Attendance_Management_System.Forms
             PopulateClassComboBox();
         }
 
-        
+        private void tabControlAddStudent_Selected(object sender, TabControlEventArgs e)
+        {
+            LoadStudentsData();
+        }
     }
 }

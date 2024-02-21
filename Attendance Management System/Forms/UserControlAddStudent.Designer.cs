@@ -68,11 +68,12 @@
             tabControlAddStudent.Anchor = AnchorStyles.None;
             tabControlAddStudent.Controls.Add(tabPageAdd);
             tabControlAddStudent.Controls.Add(tabPageUpdate);
-            tabControlAddStudent.Location = new Point(0, 0);
+            tabControlAddStudent.Location = new Point(99, 100);
             tabControlAddStudent.Name = "tabControlAddStudent";
             tabControlAddStudent.SelectedIndex = 0;
-            tabControlAddStudent.Size = new Size(942, 501);
+            tabControlAddStudent.Size = new Size(1058, 563);
             tabControlAddStudent.TabIndex = 1;
+            tabControlAddStudent.Selected += tabControlAddStudent_Selected;
             // 
             // tabPageAdd
             // 
@@ -91,7 +92,7 @@
             tabPageAdd.Location = new Point(4, 4);
             tabPageAdd.Name = "tabPageAdd";
             tabPageAdd.Padding = new Padding(3);
-            tabPageAdd.Size = new Size(934, 468);
+            tabPageAdd.Size = new Size(1050, 530);
             tabPageAdd.TabIndex = 0;
             tabPageAdd.Text = "Add Student";
             tabPageAdd.UseVisualStyleBackColor = true;
@@ -229,7 +230,7 @@
             tabPageUpdate.Location = new Point(4, 4);
             tabPageUpdate.Name = "tabPageUpdate";
             tabPageUpdate.Padding = new Padding(3);
-            tabPageUpdate.Size = new Size(934, 468);
+            tabPageUpdate.Size = new Size(1050, 530);
             tabPageUpdate.TabIndex = 1;
             tabPageUpdate.Text = "Update Student";
             tabPageUpdate.UseVisualStyleBackColor = true;
@@ -382,7 +383,7 @@
             BackColor = Color.White;
             Controls.Add(tabControlAddStudent);
             Name = "UserControlAddStudent";
-            Size = new Size(942, 501);
+            Size = new Size(1200, 700);
             Load += UserControlAddStudent_Load;
             tabControlAddStudent.ResumeLayout(false);
             tabPageAdd.ResumeLayout(false);
