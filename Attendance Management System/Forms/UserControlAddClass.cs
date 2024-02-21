@@ -76,7 +76,7 @@ namespace Attendance_Management_System.Forms
             // Write student data to users.xml file
             WriteClassToXml(name, id, teacherName);
 
-            MessageBox.Show("Student added successfully!");
+            MessageBox.Show("Class added successfully!");
             textBoxID.Clear();
             textBoxName.Clear();
 
@@ -145,7 +145,7 @@ namespace Attendance_Management_System.Forms
 
             XmlElement teacherNode = doc.CreateElement("Class");
             teacherNode.InnerText = teacherName;
-            classNode.AppendChild(classNode);
+            classNode.AppendChild(teacherNode);
 
             // Append the student node to the root
             root.AppendChild(classNode);
@@ -158,7 +158,7 @@ namespace Attendance_Management_System.Forms
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-
+            AddClass();
         }
 
         private void UserControlAddClass_Load(object sender, EventArgs e)
