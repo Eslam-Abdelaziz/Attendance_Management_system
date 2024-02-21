@@ -18,6 +18,6 @@
   <Class>
     <ID>4</ID>
     <Name>Art</Name>
-    <Class>Teacher</Class>
+    <Teacher>Teacher</Teacher>
   </Class>
 </Classes>

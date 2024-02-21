@@ -41,13 +41,13 @@
             tabPageUp = new TabPage();
             buttonDelete = new Button();
             buttonFind = new Button();
-            button1 = new Button();
-            label1 = new Label();
+            buttonUpdate = new Button();
+            labelUpTeacher = new Label();
             comboBoxUpTeacher = new ComboBox();
-            textBox1 = new TextBox();
-            label2 = new Label();
-            textBox2 = new TextBox();
-            label3 = new Label();
+            textBoxUpID = new TextBox();
+            labelUpID = new Label();
+            textBoxUpName = new TextBox();
+            labelUpName = new Label();
             labelUp = new Label();
             tabControlAddClass.SuspendLayout();
             tabPageAddClass.SuspendLayout();
@@ -65,6 +65,7 @@
             tabControlAddClass.SelectedIndex = 0;
             tabControlAddClass.Size = new Size(942, 501);
             tabControlAddClass.TabIndex = 0;
+            tabControlAddClass.Selected += tabControlAddClass_Selected;
             // 
             // tabPageAddClass
             // 
@@ -166,13 +167,13 @@
             // 
             tabPageUp.Controls.Add(buttonDelete);
             tabPageUp.Controls.Add(buttonFind);
-            tabPageUp.Controls.Add(button1);
-            tabPageUp.Controls.Add(label1);
+            tabPageUp.Controls.Add(buttonUpdate);
+            tabPageUp.Controls.Add(labelUpTeacher);
             tabPageUp.Controls.Add(comboBoxUpTeacher);
-            tabPageUp.Controls.Add(textBox1);
-            tabPageUp.Controls.Add(label2);
-            tabPageUp.Controls.Add(textBox2);
-            tabPageUp.Controls.Add(label3);
+            tabPageUp.Controls.Add(textBoxUpID);
+            tabPageUp.Controls.Add(labelUpID);
+            tabPageUp.Controls.Add(textBoxUpName);
+            tabPageUp.Controls.Add(labelUpName);
             tabPageUp.Controls.Add(labelUp);
             tabPageUp.Location = new Point(4, 4);
             tabPageUp.Name = "tabPageUp";
@@ -207,29 +208,30 @@
             buttonFind.TabIndex = 16;
             buttonFind.Text = "Find";
             buttonFind.UseVisualStyleBackColor = false;
+            buttonFind.Click += buttonFind_Click;
             // 
-            // button1
+            // buttonUpdate
             // 
-            button1.BackColor = Color.DarkSlateBlue;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(484, 370);
-            button1.Name = "button1";
-            button1.Size = new Size(179, 47);
-            button1.TabIndex = 15;
-            button1.Text = "Add";
-            button1.UseVisualStyleBackColor = false;
+            buttonUpdate.BackColor = Color.DarkSlateBlue;
+            buttonUpdate.FlatStyle = FlatStyle.Flat;
+            buttonUpdate.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            buttonUpdate.ForeColor = Color.White;
+            buttonUpdate.Location = new Point(484, 370);
+            buttonUpdate.Name = "buttonUpdate";
+            buttonUpdate.Size = new Size(179, 47);
+            buttonUpdate.TabIndex = 15;
+            buttonUpdate.Text = "Update";
+            buttonUpdate.UseVisualStyleBackColor = false;
             // 
-            // label1
+            // labelUpTeacher
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            label1.Location = new Point(94, 238);
-            label1.Name = "label1";
-            label1.Size = new Size(63, 20);
-            label1.TabIndex = 14;
-            label1.Text = "Teacher";
+            labelUpTeacher.AutoSize = true;
+            labelUpTeacher.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            labelUpTeacher.Location = new Point(94, 238);
+            labelUpTeacher.Name = "labelUpTeacher";
+            labelUpTeacher.Size = new Size(63, 20);
+            labelUpTeacher.TabIndex = 14;
+            labelUpTeacher.Text = "Teacher";
             // 
             // comboBoxUpTeacher
             // 
@@ -239,41 +241,41 @@
             comboBoxUpTeacher.Size = new Size(210, 28);
             comboBoxUpTeacher.TabIndex = 13;
             // 
-            // textBox1
+            // textBoxUpID
             // 
-            textBox1.BorderStyle = BorderStyle.FixedSingle;
-            textBox1.Location = new Point(94, 127);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(210, 27);
-            textBox1.TabIndex = 12;
+            textBoxUpID.BorderStyle = BorderStyle.FixedSingle;
+            textBoxUpID.Location = new Point(94, 127);
+            textBoxUpID.Name = "textBoxUpID";
+            textBoxUpID.Size = new Size(210, 27);
+            textBoxUpID.TabIndex = 12;
             // 
-            // label2
+            // labelUpID
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            label2.Location = new Point(94, 93);
-            label2.Name = "label2";
-            label2.Size = new Size(25, 20);
-            label2.TabIndex = 11;
-            label2.Text = "ID";
+            labelUpID.AutoSize = true;
+            labelUpID.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            labelUpID.Location = new Point(94, 93);
+            labelUpID.Name = "labelUpID";
+            labelUpID.Size = new Size(25, 20);
+            labelUpID.TabIndex = 11;
+            labelUpID.Text = "ID";
             // 
-            // textBox2
+            // textBoxUpName
             // 
-            textBox2.BorderStyle = BorderStyle.FixedSingle;
-            textBox2.Location = new Point(374, 282);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(210, 27);
-            textBox2.TabIndex = 10;
+            textBoxUpName.BorderStyle = BorderStyle.FixedSingle;
+            textBoxUpName.Location = new Point(374, 282);
+            textBoxUpName.Name = "textBoxUpName";
+            textBoxUpName.Size = new Size(210, 27);
+            textBoxUpName.TabIndex = 10;
             // 
-            // label3
+            // labelUpName
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            label3.Location = new Point(374, 238);
-            label3.Name = "label3";
-            label3.Size = new Size(51, 20);
-            label3.TabIndex = 9;
-            label3.Text = "Name";
+            labelUpName.AutoSize = true;
+            labelUpName.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            labelUpName.Location = new Point(374, 238);
+            labelUpName.Name = "labelUpName";
+            labelUpName.Size = new Size(51, 20);
+            labelUpName.TabIndex = 9;
+            labelUpName.Text = "Name";
             // 
             // labelUp
             // 
@@ -317,13 +319,13 @@
         private ComboBox comboBoxTeacher;
         private Button buttonDelete;
         private Button buttonFind;
-        private Button button1;
-        private Label label1;
+        private Button buttonUpdate;
+        private Label labelUpTeacher;
         private ComboBox comboBoxUpTeacher;
-        private TextBox textBox1;
-        private Label label2;
-        private TextBox textBox2;
-        private Label label3;
+        private TextBox textBoxUpID;
+        private Label labelUpID;
+        private TextBox textBoxUpName;
+        private Label labelUpName;
         private Label labelUp;
     }
 }

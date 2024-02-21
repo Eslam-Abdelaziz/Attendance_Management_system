@@ -21,6 +21,7 @@ namespace Attendance_Management_System.Forms
         public UserControlAddClass()
         {
             InitializeComponent();
+            LoadClassesData();
         }
 
         private void PopulateTeacherComboBox()
@@ -56,7 +57,7 @@ namespace Attendance_Management_System.Forms
                 MessageBox.Show("Invalid ID. Please enter a valid numeric ID.");
                 return;
             }
-            
+
             string teacherName = comboBoxTeacher.SelectedItem.ToString();
 
             if (!IsIdUnique(id))
@@ -67,7 +68,7 @@ namespace Attendance_Management_System.Forms
 
 
             // Validate student data against XML schema
-            if (!ValidateClassData(name, id ,teacherName))
+            if (!ValidateClassData(name, id, teacherName))
             {
                 MessageBox.Show("Class data is not valid.");
                 return;
@@ -143,7 +144,7 @@ namespace Attendance_Management_System.Forms
             classNode.AppendChild(nameNode);
 
 
-            XmlElement teacherNode = doc.CreateElement("Class");
+            XmlElement teacherNode = doc.CreateElement("Teacher");
             teacherNode.InnerText = teacherName;
             classNode.AppendChild(teacherNode);
 
@@ -154,6 +155,18 @@ namespace Attendance_Management_System.Forms
             doc.Save(classesFilePath);
         }
 
+        private void LoadClassesData()
+        {
+            if (File.Exists(classesFilePath))
+            {
+                classesDocument = XDocument.Load(classesFilePath);
+            }
+            else
+            {
+                classesDocument = new XDocument(new XElement("Classes"));
+                classesDocument.Save(classesFilePath);
+            }
+        }
 
 
         private void buttonAdd_Click(object sender, EventArgs e)
@@ -165,5 +178,28 @@ namespace Attendance_Management_System.Forms
         {
             PopulateTeacherComboBox();
         }
+
+        private void tabControlAddClass_Selected(object sender, TabControlEventArgs e)
+        {
+            LoadClassesData();
+        }
+
+        private void buttonFind_Click(object sender, EventArgs e)
+        {
+            string id = textBoxUpID.Text.Trim();
+            var classNode = classesDocument.Descendants("Class")
+                .FirstOrDefault(s => s.Element("ID").Value == id);
+
+            if (classNode != null)
+            {
+                textBoxUpName.Text = classNode.Element("Name").Value;
+                comboBoxUpTeacher.SelectedItem = classNode.Element("Teacher").Value;
+            }
+            else
+            {
+                MessageBox.Show("Class with the provided ID not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
     }
 }
