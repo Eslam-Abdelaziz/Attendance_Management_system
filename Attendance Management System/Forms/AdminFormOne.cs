@@ -61,5 +61,10 @@ namespace Attendance_Management_System.PAL.forms
         {
 
         }
+
+        private void userControlAddStudent1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

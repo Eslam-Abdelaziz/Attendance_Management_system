@@ -8,14 +8,21 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
+using System.Xml.Linq;
+using System.Xml.Schema;
 
 namespace Attendance_Management_System.Forms
 {
     public partial class UserControlAddStudent : UserControl
     {
+        private XDocument studentsDocument;
+        private string studentsFilePath = @"C:\Iti\C#XML\Attendance_Management_system\Attendance Management System\Data\users.xml";
+        private string schemaFilePath = @"C:\Iti\C#XML\Attendance_Management_system\Attendance Management System\Data\users_schema.xsd";
         public UserControlAddStudent()
         {
             InitializeComponent();
+            LoadStudentsData();
+
         }
 
         private void labelAdd_Click(object sender, EventArgs e)
@@ -94,6 +101,109 @@ namespace Attendance_Management_System.Forms
             }
         }
 
+        private void LoadStudentsData()
+        {
+            if (File.Exists(studentsFilePath))
+            {
+                studentsDocument = XDocument.Load(studentsFilePath);
+            }
+            else
+            {
+                studentsDocument = new XDocument(new XElement("Students"));
+                studentsDocument.Save(studentsFilePath);
+            }
+        }
+
+        private void buttonFInd_Click(object sender, EventArgs e)
+        {
+            string id = textBoxUpID.Text.Trim();
+            var student = studentsDocument.Descendants("Student")
+                .FirstOrDefault(s => s.Element("ID").Value == id);
+
+            if (student != null)
+            {
+                textBoxUpName.Text = student.Element("Name").Value;
+                textBoxUpEmail.Text = student.Element("Email").Value;
+                textBoxUpPass.Text = student.Element("Password").Value;
+                comboBoxUpClass.SelectedItem = student.Element("Class").Value;
+            }
+            else
+            {
+                MessageBox.Show("Student with the provided ID not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void buttonUpdate_Click(object sender, EventArgs e)
+        {
+            string id = textBoxUpID.Text.Trim();
+            var student = studentsDocument.Descendants("Student")
+                .FirstOrDefault(s => s.Element("ID").Value == id);
+
+            if (student != null)
+            {
+                // Create a temporary XDocument with the updated student data
+                var updatedStudentDocument = new XDocument(
+                    
+                        new XElement("Student",
+                            new XElement("Name", textBoxUpName.Text.Trim()),
+                            new XElement("ID", textBoxUpID.Text.Trim()),
+                            new XElement("Email", textBoxUpEmail.Text.Trim()),
+                            new XElement("Password", textBoxUpPass.Text.Trim()),
+                            new XElement("Class", comboBoxUpClass.SelectedItem.ToString())
+                        )
+                    
+                );
+
+                // Validate the temporary document against the schema
+                if (ValidateStudentData(updatedStudentDocument))
+                {
+                    // Update student information
+                    student.Element("Name").Value = textBoxUpName.Text.Trim();
+                    student.Element("Email").Value = textBoxUpEmail.Text.Trim();
+                    student.Element("Password").Value = textBoxUpPass.Text.Trim();
+                    student.Element("Class").Value = comboBoxUpClass.SelectedItem.ToString();
+
+                    // Save changes to XML file
+                    studentsDocument.Save(studentsFilePath);
+
+                    MessageBox.Show("Student information updated successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Invalid student data. Please check the entered values.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Student with the provided ID not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private bool ValidateStudentData(XDocument studentDocument)
+        {
+            try
+            {
+                // Load XML schema
+                XmlSchemaSet schemaSet = new XmlSchemaSet();
+                schemaSet.Add("", schemaFilePath);
+
+                // Validate the document against the schema
+                studentDocument.Validate(schemaSet, (o, e) =>
+                {
+
+                    throw new Exception(e.Message);
+                });
+
+                return true;
+            }
+            catch (Exception ex) 
+            {
+                MessageBox.Show("XML validation error: " + ex.Message);
+
+                return false;
+            }
+        }
+
         // Method to write student data to users.xml file
         private void WriteStudentToXml(string name, int id, string email, string password, string className)
         {
@@ -145,5 +255,6 @@ namespace Attendance_Management_System.Forms
             PopulateClassComboBox();
         }
 
+        
     }
 }

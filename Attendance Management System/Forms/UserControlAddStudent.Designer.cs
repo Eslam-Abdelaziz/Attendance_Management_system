@@ -43,6 +43,8 @@
             labelName = new Label();
             labelAdd = new Label();
             tabPageUpdate = new TabPage();
+            buttonDelete = new Button();
+            buttonFInd = new Button();
             labelUpClass = new Label();
             comboBoxUpClass = new ComboBox();
             buttonUpdate = new Button();
@@ -55,8 +57,6 @@
             textBoxUpName = new TextBox();
             labelUpName = new Label();
             labelUpdate = new Label();
-            buttonFInd = new Button();
-            buttonDelete = new Button();
             tabControlAddStudent.SuspendLayout();
             tabPageAdd.SuspendLayout();
             tabPageUpdate.SuspendLayout();
@@ -234,6 +234,33 @@
             tabPageUpdate.Text = "Update Student";
             tabPageUpdate.UseVisualStyleBackColor = true;
             // 
+            // buttonDelete
+            // 
+            buttonDelete.BackColor = Color.OrangeRed;
+            buttonDelete.FlatStyle = FlatStyle.Flat;
+            buttonDelete.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            buttonDelete.ForeColor = Color.White;
+            buttonDelete.Location = new Point(701, 397);
+            buttonDelete.Name = "buttonDelete";
+            buttonDelete.Size = new Size(152, 43);
+            buttonDelete.TabIndex = 23;
+            buttonDelete.Text = "Delete";
+            buttonDelete.UseVisualStyleBackColor = false;
+            // 
+            // buttonFInd
+            // 
+            buttonFInd.BackColor = Color.DarkSlateBlue;
+            buttonFInd.FlatStyle = FlatStyle.Flat;
+            buttonFInd.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            buttonFInd.ForeColor = Color.White;
+            buttonFInd.Location = new Point(433, 106);
+            buttonFInd.Name = "buttonFInd";
+            buttonFInd.Size = new Size(162, 39);
+            buttonFInd.TabIndex = 22;
+            buttonFInd.Text = "Find";
+            buttonFInd.UseVisualStyleBackColor = false;
+            buttonFInd.Click += buttonFInd_Click;
+            // 
             // labelUpClass
             // 
             labelUpClass.AutoSize = true;
@@ -264,6 +291,7 @@
             buttonUpdate.TabIndex = 19;
             buttonUpdate.Text = "Update";
             buttonUpdate.UseVisualStyleBackColor = false;
+            buttonUpdate.Click += buttonUpdate_Click;
             // 
             // textBoxUpPass
             // 
@@ -346,32 +374,6 @@
             labelUpdate.Size = new Size(119, 20);
             labelUpdate.TabIndex = 10;
             labelUpdate.Text = "Update Student";
-            // 
-            // buttonFInd
-            // 
-            buttonFInd.BackColor = Color.DarkSlateBlue;
-            buttonFInd.FlatStyle = FlatStyle.Flat;
-            buttonFInd.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            buttonFInd.ForeColor = Color.White;
-            buttonFInd.Location = new Point(433, 106);
-            buttonFInd.Name = "buttonFInd";
-            buttonFInd.Size = new Size(162, 39);
-            buttonFInd.TabIndex = 22;
-            buttonFInd.Text = "Find";
-            buttonFInd.UseVisualStyleBackColor = false;
-            // 
-            // buttonDelete
-            // 
-            buttonDelete.BackColor = Color.OrangeRed;
-            buttonDelete.FlatStyle = FlatStyle.Flat;
-            buttonDelete.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            buttonDelete.ForeColor = Color.White;
-            buttonDelete.Location = new Point(701, 397);
-            buttonDelete.Name = "buttonDelete";
-            buttonDelete.Size = new Size(152, 43);
-            buttonDelete.TabIndex = 23;
-            buttonDelete.Text = "Delete";
-            buttonDelete.UseVisualStyleBackColor = false;
             // 
             // UserControlAddStudent
             // 

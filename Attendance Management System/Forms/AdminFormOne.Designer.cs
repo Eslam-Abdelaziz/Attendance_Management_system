@@ -289,24 +289,25 @@
             panel1.Location = new Point(0, 0);
             panel1.Margin = new Padding(2, 3, 2, 3);
             panel1.Name = "panel1";
-            panel1.Size = new Size(258, 1080);
+            panel1.Size = new Size(258, 1055);
             panel1.TabIndex = 0;
             panel1.Paint += panel1_Paint;
             // 
             // userControlAddStudent1
             // 
             userControlAddStudent1.BackColor = Color.White;
-            userControlAddStudent1.Location = new Point(263, 174);
+            userControlAddStudent1.Location = new Point(284, 148);
             userControlAddStudent1.Name = "userControlAddStudent1";
-            userControlAddStudent1.Size = new Size(1241, 714);
+            userControlAddStudent1.Size = new Size(1636, 907);
             userControlAddStudent1.TabIndex = 2;
+            userControlAddStudent1.Load += userControlAddStudent1_Load;
             // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(1920, 1080);
+            ClientSize = new Size(1920, 1055);
             Controls.Add(userControlAddStudent1);
             Controls.Add(panelBack);
             Controls.Add(panel1);
