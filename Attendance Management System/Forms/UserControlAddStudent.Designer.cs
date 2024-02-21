@@ -68,10 +68,10 @@
             tabControlAddStudent.Anchor = AnchorStyles.None;
             tabControlAddStudent.Controls.Add(tabPageAdd);
             tabControlAddStudent.Controls.Add(tabPageUpdate);
-            tabControlAddStudent.Location = new Point(99, 100);
+            tabControlAddStudent.Location = new Point(34, 56);
             tabControlAddStudent.Name = "tabControlAddStudent";
             tabControlAddStudent.SelectedIndex = 0;
-            tabControlAddStudent.Size = new Size(1058, 563);
+            tabControlAddStudent.Size = new Size(1270, 778);
             tabControlAddStudent.TabIndex = 1;
             tabControlAddStudent.Selected += tabControlAddStudent_Selected;
             // 
@@ -92,7 +92,7 @@
             tabPageAdd.Location = new Point(4, 4);
             tabPageAdd.Name = "tabPageAdd";
             tabPageAdd.Padding = new Padding(3);
-            tabPageAdd.Size = new Size(1050, 530);
+            tabPageAdd.Size = new Size(1262, 745);
             tabPageAdd.TabIndex = 0;
             tabPageAdd.Text = "Add Student";
             tabPageAdd.UseVisualStyleBackColor = true;
@@ -230,7 +230,7 @@
             tabPageUpdate.Location = new Point(4, 4);
             tabPageUpdate.Name = "tabPageUpdate";
             tabPageUpdate.Padding = new Padding(3);
-            tabPageUpdate.Size = new Size(1050, 530);
+            tabPageUpdate.Size = new Size(1262, 745);
             tabPageUpdate.TabIndex = 1;
             tabPageUpdate.Text = "Update Student";
             tabPageUpdate.UseVisualStyleBackColor = true;
@@ -241,12 +241,13 @@
             buttonDelete.FlatStyle = FlatStyle.Flat;
             buttonDelete.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             buttonDelete.ForeColor = Color.White;
-            buttonDelete.Location = new Point(701, 397);
+            buttonDelete.Location = new Point(701, 464);
             buttonDelete.Name = "buttonDelete";
             buttonDelete.Size = new Size(152, 43);
             buttonDelete.TabIndex = 23;
             buttonDelete.Text = "Delete";
             buttonDelete.UseVisualStyleBackColor = false;
+            buttonDelete.Click += buttonDelete_Click;
             // 
             // buttonFInd
             // 
@@ -383,7 +384,7 @@
             BackColor = Color.White;
             Controls.Add(tabControlAddStudent);
             Name = "UserControlAddStudent";
-            Size = new Size(1200, 700);
+            Size = new Size(1400, 900);
             Load += UserControlAddStudent_Load;
             tabControlAddStudent.ResumeLayout(false);
             tabPageAdd.ResumeLayout(false);

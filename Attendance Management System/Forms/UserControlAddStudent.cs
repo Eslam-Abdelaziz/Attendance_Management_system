@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Xml;
 using System.Xml.Linq;
 using System.Xml.Schema;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace Attendance_Management_System.Forms
 {
@@ -65,6 +66,19 @@ namespace Attendance_Management_System.Forms
             string password = textBoxPass.Text;
             string className = comboBoxClass.SelectedItem.ToString(); // Assuming you have values populated in the combobox
 
+            if (!IsIdUnique(id))
+            {
+                MessageBox.Show("ID already exists. Please enter a unique ID.");
+                return;
+            }
+
+            // Check if the email is unique
+            if (!IsEmailUnique(email))
+            {
+                MessageBox.Show("Email already exists. Please enter a unique email.");
+                return;
+            }
+
             // Validate student data against XML schema
             if (!ValidateStudentData(name, id, email, password, className))
             {
@@ -74,8 +88,73 @@ namespace Attendance_Management_System.Forms
 
             // Write student data to users.xml file
             WriteStudentToXml(name, id, email, password, className);
-
+            
             MessageBox.Show("Student added successfully!");
+            textBoxID.Clear(); 
+            textBoxName.Clear();
+            textBoxEmail.Clear();
+            textBoxPass.Clear();
+
+        }
+
+        private bool IsIdUnique(int id)
+        {
+            XmlDocument doc = new XmlDocument();
+            doc.Load(studentsFilePath);
+
+            XmlNodeList studentNodes = doc.SelectNodes("//Student");
+
+            foreach (XmlNode node in studentNodes)
+            {
+                int existingId = int.Parse(node.SelectSingleNode("ID").InnerText);
+
+                if (existingId == id)
+                {
+                    return false; // ID already exists
+                }
+            }
+
+            return true; // ID is unique
+        }
+        private bool IsEmailUnique(string email)
+        {
+            XmlDocument doc = new XmlDocument();
+            doc.Load(studentsFilePath);
+
+            XmlNodeList studentNodes = doc.SelectNodes("//Student");
+
+            foreach (XmlNode node in studentNodes)
+            {
+                string existingEmail = node.SelectSingleNode("Email").InnerText;
+
+                if (existingEmail == email)
+                {
+                    return false; // Email already exists
+                }
+            }
+
+            return true; // Email is unique
+        }
+        private bool IsEmailUnique(string email, string id)
+        {
+            XmlDocument doc = new XmlDocument();
+            doc.Load(studentsFilePath);
+
+            XmlNodeList studentNodes = doc.SelectNodes("//Student");
+
+            foreach (XmlNode node in studentNodes)
+            {
+                string existingEmail = node.SelectSingleNode("Email").InnerText;
+                string existingID = node.SelectSingleNode("ID").InnerText;
+
+
+                if (existingEmail == email && existingID != id)
+                {
+                    return false; // Email already exists
+                }
+            }
+
+            return true; // Email is unique
         }
 
         // Method to validate student data against XML schema
@@ -136,11 +215,18 @@ namespace Attendance_Management_System.Forms
         private void buttonUpdate_Click(object sender, EventArgs e)
         {
             string id = textBoxUpID.Text.Trim();
+            string email = textBoxUpEmail.Text.Trim();
             var student = studentsDocument.Descendants("Student")
                 .FirstOrDefault(s => s.Element("ID").Value == id);
 
             if (student != null)
             {
+
+                if (!IsEmailUnique(email, id))
+                {
+                    MessageBox.Show("Email already exists. Please enter a unique email.");
+                    return;
+                }
                 // Create a temporary XDocument with the updated student data
                 var updatedStudentDocument = new XDocument(
 
@@ -243,6 +329,39 @@ namespace Attendance_Management_System.Forms
             doc.Save(@"C:\Iti\C#XML\Attendance_Management_system\Attendance Management System\Data\users.xml");
         }
 
+        private void DeleteStudent()
+        {
+            // Get the ID of the student to delete
+            int idToDelete;
+            if (!int.TryParse(textBoxUpID.Text, out idToDelete))
+            {
+                MessageBox.Show("Invalid ID. Please enter a valid numeric ID.");
+                return;
+            }
+
+            // Load the XML document
+            XmlDocument doc = new XmlDocument();
+            doc.Load(studentsFilePath);
+
+            // Find the student node with the matching ID
+            XmlNode studentNodeToDelete = doc.SelectSingleNode($"//Student[ID={idToDelete}]");
+
+            if (studentNodeToDelete != null)
+            {
+                // Remove the student node from the XML document
+                studentNodeToDelete.ParentNode.RemoveChild(studentNodeToDelete);
+
+                // Save the changes to the XML file
+                doc.Save(studentsFilePath);
+
+                MessageBox.Show("Student deleted successfully!");
+            }
+            else
+            {
+                MessageBox.Show("Student not found with the given ID.");
+            }
+        }
+
         // Event handler for the Add button click
         private void buttonAdd_Click(object sender, EventArgs e)
         {
@@ -258,6 +377,11 @@ namespace Attendance_Management_System.Forms
         private void tabControlAddStudent_Selected(object sender, TabControlEventArgs e)
         {
             LoadStudentsData();
+        }
+
+        private void buttonDelete_Click(object sender, EventArgs e)
+        {
+            DeleteStudent();
         }
     }
 }

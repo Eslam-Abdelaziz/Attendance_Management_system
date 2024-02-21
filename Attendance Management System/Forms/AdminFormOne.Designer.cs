@@ -296,7 +296,7 @@
             // userControlAddStudent1
             // 
             userControlAddStudent1.BackColor = Color.White;
-            userControlAddStudent1.Location = new Point(258, 151);
+            userControlAddStudent1.Location = new Point(258, 156);
             userControlAddStudent1.Name = "userControlAddStudent1";
             userControlAddStudent1.Size = new Size(1500, 875);
             userControlAddStudent1.TabIndex = 2;
