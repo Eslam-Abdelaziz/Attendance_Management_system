@@ -241,7 +241,7 @@
             buttonDelete.FlatStyle = FlatStyle.Flat;
             buttonDelete.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             buttonDelete.ForeColor = Color.White;
-            buttonDelete.Location = new Point(701, 464);
+            buttonDelete.Location = new Point(701, 397);
             buttonDelete.Name = "buttonDelete";
             buttonDelete.Size = new Size(152, 43);
             buttonDelete.TabIndex = 23;

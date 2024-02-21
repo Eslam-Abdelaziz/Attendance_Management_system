@@ -35,7 +35,7 @@ namespace Attendance_Management_System.Forms
         {
             // Load the users.xml file
             XmlDocument doc = new XmlDocument();
-            doc.Load(@"C:\Iti\C#XML\Attendance_Management_system\Attendance Management System\Data\users.xml");
+            doc.Load(studentsFilePath);
 
             // Get all "Class" nodes
             XmlNodeList classNodes = doc.SelectNodes("//Class");
@@ -50,6 +50,8 @@ namespace Attendance_Management_System.Forms
             // Add unique class names to the combo box
             comboBoxClass.Items.AddRange(classNames.ToArray());
             comboBoxUpClass.Items.AddRange(classNames.ToArray());
+            comboBoxClass.SelectedIndex = 0;
+            comboBoxUpClass.SelectedIndex = 0;
         }
 
         private void AddStudent()
@@ -163,7 +165,7 @@ namespace Attendance_Management_System.Forms
             try
             {
                 XmlReaderSettings settings = new XmlReaderSettings();
-                settings.Schemas.Add(null, @"C:\Iti\C#XML\Attendance_Management_system\Attendance Management System\Data\users_schema.xsd"); // Replace "your_schema.xsd" with the path to your XML schema file
+                settings.Schemas.Add(null, schemaFilePath);
                 settings.ValidationType = ValidationType.Schema;
 
                 using (XmlReader reader = XmlReader.Create(new StringReader("<Student><Name>" + name + "</Name><ID>" + id + "</ID><Email>" + email + "</Email><Password>" + password + "</Password><Class>" + className + "</Class></Student>"), settings))
@@ -294,7 +296,7 @@ namespace Attendance_Management_System.Forms
         private void WriteStudentToXml(string name, int id, string email, string password, string className)
         {
             XmlDocument doc = new XmlDocument();
-            doc.Load(@"C:\Iti\C#XML\Attendance_Management_system\Attendance Management System\Data\users.xml");
+            doc.Load(studentsFilePath);
 
             XmlElement root = doc.DocumentElement;
 
@@ -326,7 +328,7 @@ namespace Attendance_Management_System.Forms
             root.AppendChild(studentNode);
 
             // Save the XML document
-            doc.Save(@"C:\Iti\C#XML\Attendance_Management_system\Attendance Management System\Data\users.xml");
+            doc.Save(studentsFilePath);
         }
 
         private void DeleteStudent()
