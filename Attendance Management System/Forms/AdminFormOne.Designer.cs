@@ -47,6 +47,7 @@
             label1 = new Label();
             pictureBox1 = new PictureBox();
             panel1 = new Panel();
+            userControlAddStudent1 = new Forms.UserControlAddStudent();
             panelBack.SuspendLayout();
             panelExpand.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxExpand).BeginInit();
@@ -68,7 +69,7 @@
             panelBack.Location = new Point(258, 0);
             panelBack.Margin = new Padding(2, 3, 2, 3);
             panelBack.Name = "panelBack";
-            panelBack.Size = new Size(926, 148);
+            panelBack.Size = new Size(1662, 148);
             panelBack.TabIndex = 1;
             panelBack.Paint += panelBack_Paint;
             // 
@@ -138,7 +139,7 @@
             // 
             pictureBoxExpand.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             pictureBoxExpand.Cursor = Cursors.Hand;
-            pictureBoxExpand.Location = new Point(794, 32);
+            pictureBoxExpand.Location = new Point(1530, 32);
             pictureBoxExpand.Margin = new Padding(2, 3, 2, 3);
             pictureBoxExpand.Name = "pictureBoxExpand";
             pictureBoxExpand.Size = new Size(21, 21);
@@ -149,7 +150,7 @@
             // pictureBox2
             // 
             pictureBox2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            pictureBox2.Location = new Point(730, 0);
+            pictureBox2.Location = new Point(1466, 0);
             pictureBox2.Margin = new Padding(2, 3, 2, 3);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(60, 58);
@@ -181,7 +182,7 @@
             panelTop.Location = new Point(0, 59);
             panelTop.Margin = new Padding(2, 3, 2, 3);
             panelTop.Name = "panelTop";
-            panelTop.Size = new Size(926, 89);
+            panelTop.Size = new Size(1662, 89);
             panelTop.TabIndex = 0;
             // 
             // labelRole
@@ -288,16 +289,25 @@
             panel1.Location = new Point(0, 0);
             panel1.Margin = new Padding(2, 3, 2, 3);
             panel1.Name = "panel1";
-            panel1.Size = new Size(258, 681);
+            panel1.Size = new Size(258, 1080);
             panel1.TabIndex = 0;
             panel1.Paint += panel1_Paint;
+            // 
+            // userControlAddStudent1
+            // 
+            userControlAddStudent1.BackColor = Color.White;
+            userControlAddStudent1.Location = new Point(263, 174);
+            userControlAddStudent1.Name = "userControlAddStudent1";
+            userControlAddStudent1.Size = new Size(1241, 714);
+            userControlAddStudent1.TabIndex = 2;
             // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(1184, 681);
+            ClientSize = new Size(1920, 1080);
+            Controls.Add(userControlAddStudent1);
             Controls.Add(panelBack);
             Controls.Add(panel1);
             Font = new Font("Century Gothic", 9F);
@@ -342,5 +352,6 @@
         private Panel panel3;
         private Button button1;
         private Button buttonMinimize;
+        private Forms.UserControlAddStudent userControlAddStudent1;
     }
 }

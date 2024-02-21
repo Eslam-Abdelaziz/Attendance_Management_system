@@ -41,4 +41,11 @@
     <Password>newstudentpass</Password>
     <Class>Science101</Class>
   </Student>
+  <Student>
+    <Name>Ahmed</Name>
+    <ID>12</ID>
+    <Email>Ahmed@gmail.com</Email>
+    <Password>12345Test</Password>
+    <Class>English101</Class>
+  </Student>
 </Users>
