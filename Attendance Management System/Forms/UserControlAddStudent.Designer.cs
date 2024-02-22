@@ -29,19 +29,6 @@
         private void InitializeComponent()
         {
             tabControlAddStudent = new TabControl();
-            tabPageAdd = new TabPage();
-            labelClass = new Label();
-            comboBoxClass = new ComboBox();
-            buttonAdd = new Button();
-            textBoxPass = new TextBox();
-            labelPass = new Label();
-            textBoxEmail = new TextBox();
-            labelEmail = new Label();
-            textBoxID = new TextBox();
-            labelID = new Label();
-            textBoxName = new TextBox();
-            labelName = new Label();
-            labelAdd = new Label();
             tabPageUpdate = new TabPage();
             buttonDelete = new Button();
             buttonFInd = new Button();
@@ -57,9 +44,22 @@
             textBoxUpName = new TextBox();
             labelUpName = new Label();
             labelUpdate = new Label();
+            labelAdd = new Label();
+            labelName = new Label();
+            textBoxName = new TextBox();
+            labelID = new Label();
+            textBoxID = new TextBox();
+            labelEmail = new Label();
+            textBoxEmail = new TextBox();
+            labelPass = new Label();
+            textBoxPass = new TextBox();
+            buttonAdd = new Button();
+            comboBoxClass = new ComboBox();
+            labelClass = new Label();
+            tabPageAdd = new TabPage();
             tabControlAddStudent.SuspendLayout();
-            tabPageAdd.SuspendLayout();
             tabPageUpdate.SuspendLayout();
+            tabPageAdd.SuspendLayout();
             SuspendLayout();
             // 
             // tabControlAddStudent
@@ -74,142 +74,6 @@
             tabControlAddStudent.Size = new Size(1270, 778);
             tabControlAddStudent.TabIndex = 1;
             tabControlAddStudent.Selected += tabControlAddStudent_Selected;
-            // 
-            // tabPageAdd
-            // 
-            tabPageAdd.Controls.Add(labelClass);
-            tabPageAdd.Controls.Add(comboBoxClass);
-            tabPageAdd.Controls.Add(buttonAdd);
-            tabPageAdd.Controls.Add(textBoxPass);
-            tabPageAdd.Controls.Add(labelPass);
-            tabPageAdd.Controls.Add(textBoxEmail);
-            tabPageAdd.Controls.Add(labelEmail);
-            tabPageAdd.Controls.Add(textBoxID);
-            tabPageAdd.Controls.Add(labelID);
-            tabPageAdd.Controls.Add(textBoxName);
-            tabPageAdd.Controls.Add(labelName);
-            tabPageAdd.Controls.Add(labelAdd);
-            tabPageAdd.Location = new Point(4, 4);
-            tabPageAdd.Name = "tabPageAdd";
-            tabPageAdd.Padding = new Padding(3);
-            tabPageAdd.Size = new Size(1262, 745);
-            tabPageAdd.TabIndex = 0;
-            tabPageAdd.Text = "Add Student";
-            tabPageAdd.UseVisualStyleBackColor = true;
-            // 
-            // labelClass
-            // 
-            labelClass.AutoSize = true;
-            labelClass.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            labelClass.Location = new Point(83, 291);
-            labelClass.Name = "labelClass";
-            labelClass.Size = new Size(44, 20);
-            labelClass.TabIndex = 11;
-            labelClass.Text = "Class";
-            // 
-            // comboBoxClass
-            // 
-            comboBoxClass.FormattingEnabled = true;
-            comboBoxClass.Location = new Point(83, 323);
-            comboBoxClass.Name = "comboBoxClass";
-            comboBoxClass.Size = new Size(210, 28);
-            comboBoxClass.TabIndex = 10;
-            // 
-            // buttonAdd
-            // 
-            buttonAdd.BackColor = Color.DarkSlateBlue;
-            buttonAdd.FlatStyle = FlatStyle.Flat;
-            buttonAdd.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            buttonAdd.ForeColor = Color.White;
-            buttonAdd.Location = new Point(612, 405);
-            buttonAdd.Name = "buttonAdd";
-            buttonAdd.Size = new Size(146, 44);
-            buttonAdd.TabIndex = 9;
-            buttonAdd.Text = "Add";
-            buttonAdd.UseVisualStyleBackColor = false;
-            buttonAdd.Click += buttonAdd_Click;
-            // 
-            // textBoxPass
-            // 
-            textBoxPass.BorderStyle = BorderStyle.FixedSingle;
-            textBoxPass.Location = new Point(506, 229);
-            textBoxPass.Name = "textBoxPass";
-            textBoxPass.Size = new Size(210, 27);
-            textBoxPass.TabIndex = 8;
-            // 
-            // labelPass
-            // 
-            labelPass.AutoSize = true;
-            labelPass.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            labelPass.Location = new Point(509, 197);
-            labelPass.Name = "labelPass";
-            labelPass.Size = new Size(76, 20);
-            labelPass.TabIndex = 7;
-            labelPass.Text = "Password";
-            // 
-            // textBoxEmail
-            // 
-            textBoxEmail.BorderStyle = BorderStyle.FixedSingle;
-            textBoxEmail.Location = new Point(83, 229);
-            textBoxEmail.Name = "textBoxEmail";
-            textBoxEmail.Size = new Size(210, 27);
-            textBoxEmail.TabIndex = 6;
-            // 
-            // labelEmail
-            // 
-            labelEmail.AutoSize = true;
-            labelEmail.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            labelEmail.Location = new Point(80, 197);
-            labelEmail.Name = "labelEmail";
-            labelEmail.Size = new Size(47, 20);
-            labelEmail.TabIndex = 5;
-            labelEmail.Text = "Email";
-            // 
-            // textBoxID
-            // 
-            textBoxID.BorderStyle = BorderStyle.FixedSingle;
-            textBoxID.Location = new Point(506, 125);
-            textBoxID.Name = "textBoxID";
-            textBoxID.Size = new Size(210, 27);
-            textBoxID.TabIndex = 4;
-            // 
-            // labelID
-            // 
-            labelID.AutoSize = true;
-            labelID.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            labelID.Location = new Point(509, 93);
-            labelID.Name = "labelID";
-            labelID.Size = new Size(25, 20);
-            labelID.TabIndex = 3;
-            labelID.Text = "ID";
-            // 
-            // textBoxName
-            // 
-            textBoxName.BorderStyle = BorderStyle.FixedSingle;
-            textBoxName.Location = new Point(83, 125);
-            textBoxName.Name = "textBoxName";
-            textBoxName.Size = new Size(210, 27);
-            textBoxName.TabIndex = 2;
-            // 
-            // labelName
-            // 
-            labelName.AutoSize = true;
-            labelName.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            labelName.Location = new Point(83, 93);
-            labelName.Name = "labelName";
-            labelName.Size = new Size(51, 20);
-            labelName.TabIndex = 1;
-            labelName.Text = "Name";
-            // 
-            // labelAdd
-            // 
-            labelAdd.AutoSize = true;
-            labelAdd.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            labelAdd.Location = new Point(9, 6);
-            labelAdd.Name = "labelAdd";
-            labelAdd.Size = new Size(97, 20);
-            labelAdd.TabIndex = 0;
-            labelAdd.Text = "Add Student";
             // 
             // tabPageUpdate
             // 
@@ -377,6 +241,142 @@
             labelUpdate.TabIndex = 10;
             labelUpdate.Text = "Update Student";
             // 
+            // labelAdd
+            // 
+            labelAdd.AutoSize = true;
+            labelAdd.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            labelAdd.Location = new Point(9, 6);
+            labelAdd.Name = "labelAdd";
+            labelAdd.Size = new Size(97, 20);
+            labelAdd.TabIndex = 0;
+            labelAdd.Text = "Add Student";
+            // 
+            // labelName
+            // 
+            labelName.AutoSize = true;
+            labelName.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            labelName.Location = new Point(83, 93);
+            labelName.Name = "labelName";
+            labelName.Size = new Size(51, 20);
+            labelName.TabIndex = 1;
+            labelName.Text = "Name";
+            // 
+            // textBoxName
+            // 
+            textBoxName.BorderStyle = BorderStyle.FixedSingle;
+            textBoxName.Location = new Point(83, 125);
+            textBoxName.Name = "textBoxName";
+            textBoxName.Size = new Size(210, 27);
+            textBoxName.TabIndex = 2;
+            // 
+            // labelID
+            // 
+            labelID.AutoSize = true;
+            labelID.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            labelID.Location = new Point(509, 93);
+            labelID.Name = "labelID";
+            labelID.Size = new Size(25, 20);
+            labelID.TabIndex = 3;
+            labelID.Text = "ID";
+            // 
+            // textBoxID
+            // 
+            textBoxID.BorderStyle = BorderStyle.FixedSingle;
+            textBoxID.Location = new Point(506, 125);
+            textBoxID.Name = "textBoxID";
+            textBoxID.Size = new Size(210, 27);
+            textBoxID.TabIndex = 4;
+            // 
+            // labelEmail
+            // 
+            labelEmail.AutoSize = true;
+            labelEmail.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            labelEmail.Location = new Point(80, 197);
+            labelEmail.Name = "labelEmail";
+            labelEmail.Size = new Size(47, 20);
+            labelEmail.TabIndex = 5;
+            labelEmail.Text = "Email";
+            // 
+            // textBoxEmail
+            // 
+            textBoxEmail.BorderStyle = BorderStyle.FixedSingle;
+            textBoxEmail.Location = new Point(83, 229);
+            textBoxEmail.Name = "textBoxEmail";
+            textBoxEmail.Size = new Size(210, 27);
+            textBoxEmail.TabIndex = 6;
+            // 
+            // labelPass
+            // 
+            labelPass.AutoSize = true;
+            labelPass.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            labelPass.Location = new Point(509, 197);
+            labelPass.Name = "labelPass";
+            labelPass.Size = new Size(76, 20);
+            labelPass.TabIndex = 7;
+            labelPass.Text = "Password";
+            // 
+            // textBoxPass
+            // 
+            textBoxPass.BorderStyle = BorderStyle.FixedSingle;
+            textBoxPass.Location = new Point(506, 229);
+            textBoxPass.Name = "textBoxPass";
+            textBoxPass.Size = new Size(210, 27);
+            textBoxPass.TabIndex = 8;
+            // 
+            // buttonAdd
+            // 
+            buttonAdd.BackColor = Color.DarkSlateBlue;
+            buttonAdd.FlatStyle = FlatStyle.Flat;
+            buttonAdd.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            buttonAdd.ForeColor = Color.White;
+            buttonAdd.Location = new Point(612, 405);
+            buttonAdd.Name = "buttonAdd";
+            buttonAdd.Size = new Size(146, 44);
+            buttonAdd.TabIndex = 9;
+            buttonAdd.Text = "Add";
+            buttonAdd.UseVisualStyleBackColor = false;
+            buttonAdd.Click += buttonAdd_Click;
+            // 
+            // comboBoxClass
+            // 
+            comboBoxClass.FormattingEnabled = true;
+            comboBoxClass.Location = new Point(83, 323);
+            comboBoxClass.Name = "comboBoxClass";
+            comboBoxClass.Size = new Size(210, 28);
+            comboBoxClass.TabIndex = 10;
+            // 
+            // labelClass
+            // 
+            labelClass.AutoSize = true;
+            labelClass.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            labelClass.Location = new Point(83, 291);
+            labelClass.Name = "labelClass";
+            labelClass.Size = new Size(44, 20);
+            labelClass.TabIndex = 11;
+            labelClass.Text = "Class";
+            // 
+            // tabPageAdd
+            // 
+            tabPageAdd.Controls.Add(labelClass);
+            tabPageAdd.Controls.Add(comboBoxClass);
+            tabPageAdd.Controls.Add(buttonAdd);
+            tabPageAdd.Controls.Add(textBoxPass);
+            tabPageAdd.Controls.Add(labelPass);
+            tabPageAdd.Controls.Add(textBoxEmail);
+            tabPageAdd.Controls.Add(labelEmail);
+            tabPageAdd.Controls.Add(textBoxID);
+            tabPageAdd.Controls.Add(labelID);
+            tabPageAdd.Controls.Add(textBoxName);
+            tabPageAdd.Controls.Add(labelName);
+            tabPageAdd.Controls.Add(labelAdd);
+            tabPageAdd.Location = new Point(4, 4);
+            tabPageAdd.Name = "tabPageAdd";
+            tabPageAdd.Padding = new Padding(3);
+            tabPageAdd.Size = new Size(1262, 745);
+            tabPageAdd.TabIndex = 0;
+            tabPageAdd.Text = "Add Student";
+            tabPageAdd.UseVisualStyleBackColor = true;
+            // 
             // UserControlAddStudent
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -387,28 +387,17 @@
             Size = new Size(1400, 900);
             Load += UserControlAddStudent_Load;
             tabControlAddStudent.ResumeLayout(false);
-            tabPageAdd.ResumeLayout(false);
-            tabPageAdd.PerformLayout();
             tabPageUpdate.ResumeLayout(false);
             tabPageUpdate.PerformLayout();
+            tabPageAdd.ResumeLayout(false);
+            tabPageAdd.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
 
         private TabControl tabControlAddStudent;
-        private TabPage tabPageAdd;
-        private TextBox textBoxID;
-        private Label labelID;
-        private TextBox textBoxName;
-        private Label labelName;
-        private Label labelAdd;
         private TabPage tabPageUpdate;
-        private TextBox textBoxPass;
-        private Label labelPass;
-        private TextBox textBoxEmail;
-        private Label labelEmail;
-        private Button buttonAdd;
         private Button buttonUpdate;
         private TextBox textBoxUpPass;
         private Label labelUpPass;
@@ -419,11 +408,22 @@
         private TextBox textBoxUpName;
         private Label labelUpName;
         private Label labelUpdate;
-        private Label labelClass;
-        private ComboBox comboBoxClass;
         private Label labelUpClass;
         private ComboBox comboBoxUpClass;
         private Button buttonDelete;
         private Button buttonFInd;
+        private TabPage tabPageAdd;
+        private Label labelClass;
+        private ComboBox comboBoxClass;
+        private Button buttonAdd;
+        private TextBox textBoxPass;
+        private Label labelPass;
+        private TextBox textBoxEmail;
+        private Label labelEmail;
+        private TextBox textBoxID;
+        private Label labelID;
+        private TextBox textBoxName;
+        private Label labelName;
+        private Label labelAdd;
     }
 }

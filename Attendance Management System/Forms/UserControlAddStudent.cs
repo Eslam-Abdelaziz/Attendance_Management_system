@@ -19,6 +19,7 @@ namespace Attendance_Management_System.Forms
         private XDocument studentsDocument;
         private string studentsFilePath = @"C:\Iti\C#XML\Attendance_Management_system\Attendance Management System\Data\users.xml";
         private string schemaFilePath = @"C:\Iti\C#XML\Attendance_Management_system\Attendance Management System\Data\users_schema.xsd";
+        private string classesFilePath = @"C:\Iti\C#XML\Attendance_Management_system\Attendance Management System\Data\classes.xml";
         public UserControlAddStudent()
         {
             InitializeComponent();
@@ -35,10 +36,10 @@ namespace Attendance_Management_System.Forms
         {
             // Load the users.xml file
             XmlDocument doc = new XmlDocument();
-            doc.Load(studentsFilePath);
+            doc.Load(classesFilePath);
 
             // Get all "Class" nodes
-            XmlNodeList classNodes = doc.SelectNodes("//Class");
+            XmlNodeList classNodes = doc.SelectNodes("//Class//Name");
 
             // Extract class names and filter out duplicates
             HashSet<string> classNames = new HashSet<string>();

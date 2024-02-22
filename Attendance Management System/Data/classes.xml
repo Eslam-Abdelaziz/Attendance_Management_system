@@ -25,4 +25,9 @@
     <Name>Software</Name>
     <Teacher>Smith</Teacher>
   </Class>
+  <Class>
+    <ID>8</ID>
+    <Name>Databases</Name>
+    <Teacher>Sarah Johnson</Teacher>
+  </Class>
 </Classes>

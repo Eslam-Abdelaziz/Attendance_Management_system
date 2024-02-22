@@ -258,7 +258,8 @@ namespace Attendance_Management_System.Forms
 
                     // Save changes to XML file
                     classesDocument.Save(classesFilePath);
-
+                    textBoxUpID.Clear();
+                    textBoxUpName.Clear();
 
                     MessageBox.Show("Class information updated successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -414,7 +415,8 @@ namespace Attendance_Management_System.Forms
                 // Save the changes to the XML file
                 doc.Save(classesFilePath);
                 RemoveClassFromTeacher(name);
-
+                textBoxUpID.Clear();
+                textBoxUpName.Clear();
                 MessageBox.Show("Class deleted successfully!");
             }
             else

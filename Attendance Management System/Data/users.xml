@@ -21,6 +21,7 @@
     <Email>sarah.johnson@example.com</Email>
     <Password>teacherpass</Password>
     <Class>Arts</Class>
+    <Class>Databases</Class>
   </Teacher>
   <Student>
     <Name>Emma Watson</Name>

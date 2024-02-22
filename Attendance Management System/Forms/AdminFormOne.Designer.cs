@@ -47,7 +47,7 @@
             label1 = new Label();
             pictureBox1 = new PictureBox();
             panel1 = new Panel();
-            userControlAddTeacher1 = new Forms.UserControlAddTeacher();
+            userControlAddStudent1 = new Forms.UserControlAddStudent();
             panelBack.SuspendLayout();
             panelExpand.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxExpand).BeginInit();
@@ -293,12 +293,13 @@
             panel1.TabIndex = 0;
             panel1.Paint += panel1_Paint;
             // 
-            // userControlAddTeacher1
+            // userControlAddStudent1
             // 
-            userControlAddTeacher1.Location = new Point(338, 127);
-            userControlAddTeacher1.Name = "userControlAddTeacher1";
-            userControlAddTeacher1.Size = new Size(1213, 602);
-            userControlAddTeacher1.TabIndex = 2;
+            userControlAddStudent1.BackColor = Color.White;
+            userControlAddStudent1.Location = new Point(263, 176);
+            userControlAddStudent1.Name = "userControlAddStudent1";
+            userControlAddStudent1.Size = new Size(1605, 949);
+            userControlAddStudent1.TabIndex = 2;
             // 
             // MainForm
             // 
@@ -306,7 +307,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1920, 1055);
-            Controls.Add(userControlAddTeacher1);
+            Controls.Add(userControlAddStudent1);
             Controls.Add(panelBack);
             Controls.Add(panel1);
             Font = new Font("Century Gothic", 9F);
@@ -351,6 +352,6 @@
         private Panel panel3;
         private Button button1;
         private Button buttonMinimize;
-        private Forms.UserControlAddTeacher userControlAddTeacher1;
+        private Forms.UserControlAddStudent userControlAddStudent1;
     }
 }
