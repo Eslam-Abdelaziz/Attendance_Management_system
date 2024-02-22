@@ -13,6 +13,7 @@
     <Password>teacherpass</Password>
     <Class>English</Class>
     <Class>Science</Class>
+    <Class>Software</Class>
   </Teacher>
   <Teacher>
     <Name>Sarah Johnson</Name>

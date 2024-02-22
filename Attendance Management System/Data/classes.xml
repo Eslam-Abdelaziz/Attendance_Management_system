@@ -20,4 +20,9 @@
     <Name>Arts</Name>
     <Teacher>Sara Johnson</Teacher>
   </Class>
+  <Class>
+    <ID>6</ID>
+    <Name>Software</Name>
+    <Teacher>Smith</Teacher>
+  </Class>
 </Classes>

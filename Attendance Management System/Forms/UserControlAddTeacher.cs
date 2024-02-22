@@ -33,28 +33,28 @@ namespace Attendance_Management_System.Forms
 
 
 
-        private void PopulateClassComboBox()
-        {
-            // Load the users.xml file
-            XmlDocument doc = new XmlDocument();
-            doc.Load(teachersFilePath);
+        //private void PopulateClassComboBox()
+        //{
+        //    // Load the users.xml file
+        //    XmlDocument doc = new XmlDocument();
+        //    doc.Load(teachersFilePath);
 
-            // Get all "Class" nodes
-            XmlNodeList classNodes = doc.SelectNodes("//Class");
+        //    // Get all "Class" nodes
+        //    XmlNodeList classNodes = doc.SelectNodes("//Class");
 
-            // Extract class names and filter out duplicates
-            HashSet<string> classNames = new HashSet<string>();
-            foreach (XmlNode node in classNodes)
-            {
-                classNames.Add(node.InnerText);
-            }
+        //    // Extract class names and filter out duplicates
+        //    HashSet<string> classNames = new HashSet<string>();
+        //    foreach (XmlNode node in classNodes)
+        //    {
+        //        classNames.Add(node.InnerText);
+        //    }
 
-            // Add unique class names to the combo box
-            comboBoxClass.Items.AddRange(classNames.ToArray());
-            comboBoxUpClass.Items.AddRange(classNames.ToArray());
-            comboBoxClass.SelectedIndex = 0;
-            comboBoxUpClass.SelectedIndex = 0;
-        }
+        //    // Add unique class names to the combo box
+        //    comboBoxClass.Items.AddRange(classNames.ToArray());
+        //    comboBoxUpClass.Items.AddRange(classNames.ToArray());
+        //    comboBoxClass.SelectedIndex = 0;
+        //    comboBoxUpClass.SelectedIndex = 0;
+        //}
 
         private void AddTeacher()
         {
@@ -68,7 +68,7 @@ namespace Attendance_Management_System.Forms
             }
             string email = textBoxEmail.Text;
             string password = textBoxPass.Text;
-            string className = comboBoxClass.SelectedItem.ToString(); // Assuming you have values populated in the combobox
+            //string className = comboBoxClass.SelectedItem.ToString(); // Assuming you have values populated in the combobox
 
             if (!IsIdUnique(id))
             {
@@ -84,14 +84,14 @@ namespace Attendance_Management_System.Forms
             }
 
             // Validate teacher data against XML schema
-            if (!ValidateTeacherData(name, id, email, password, className))
+            if (!ValidateTeacherData(name, id, email, password))
             {
                 MessageBox.Show("Teacher data is not valid.");
                 return;
             }
 
             // Write teacher data to users.xml file
-            WriteTeacherToXml(name, id, email, password, className);
+            WriteTeacherToXml(name, id, email, password);
 
             MessageBox.Show("Teacher added successfully!");
             textBoxID.Clear();
@@ -162,7 +162,7 @@ namespace Attendance_Management_System.Forms
         }
 
         // Method to validate teacher data against XML schema
-        private bool ValidateTeacherData(string name, int id, string email, string password, string className)
+        private bool ValidateTeacherData(string name, int id, string email, string password)
         {
             try
             {
@@ -170,7 +170,7 @@ namespace Attendance_Management_System.Forms
                 settings.Schemas.Add(null, schemaFilePath);
                 settings.ValidationType = ValidationType.Schema;
 
-                using (XmlReader reader = XmlReader.Create(new StringReader("<Teacher><Name>" + name + "</Name><ID>" + id + "</ID><Email>" + email + "</Email><Password>" + password + "</Password><Class>" + className + "</Class></Teacher>"), settings))
+                using (XmlReader reader = XmlReader.Create(new StringReader("<Teacher><Name>" + name + "</Name><ID>" + id + "</ID><Email>" + email + "</Email><Password>" + password + "</Password></Teacher>"), settings))
                 {
                     while (reader.Read()) { }
                 }
@@ -208,7 +208,7 @@ namespace Attendance_Management_System.Forms
                 textBoxUpName.Text = teacher.Element("Name").Value;
                 textBoxUpEmail.Text = teacher.Element("Email").Value;
                 textBoxUpPass.Text = teacher.Element("Password").Value;
-                comboBoxUpClass.SelectedItem = teacher.Element("Class").Value;
+                //comboBoxUpClass.SelectedItem = teacher.Element("Class").Value;
             }
             else
             {
@@ -238,8 +238,8 @@ namespace Attendance_Management_System.Forms
                             new XElement("Name", textBoxUpName.Text.Trim()),
                             new XElement("ID", textBoxUpID.Text.Trim()),
                             new XElement("Email", textBoxUpEmail.Text.Trim()),
-                            new XElement("Password", textBoxUpPass.Text.Trim()),
-                            new XElement("Class", comboBoxUpClass.SelectedItem.ToString())
+                            new XElement("Password", textBoxUpPass.Text.Trim())
+                            //new XElement("Class", comboBoxUpClass.SelectedItem.ToString())
                         )
 
                 );
@@ -251,7 +251,7 @@ namespace Attendance_Management_System.Forms
                     teacher.Element("Name").Value = textBoxUpName.Text.Trim();
                     teacher.Element("Email").Value = textBoxUpEmail.Text.Trim();
                     teacher.Element("Password").Value = textBoxUpPass.Text.Trim();
-                    teacher.Element("Class").Value = comboBoxUpClass.SelectedItem.ToString();
+                    //teacher.Element("Class").Value = comboBoxUpClass.SelectedItem.ToString();
 
                     // Save changes to XML file
                     teachersDocument.Save(teachersFilePath);
@@ -299,7 +299,7 @@ namespace Attendance_Management_System.Forms
         }
 
         // Method to write teacher data to users.xml file
-        private void WriteTeacherToXml(string name, int id, string email, string password, string className)
+        private void WriteTeacherToXml(string name, int id, string email, string password)
         {
             XmlDocument doc = new XmlDocument();
             doc.Load(teachersFilePath);
@@ -326,9 +326,9 @@ namespace Attendance_Management_System.Forms
             passNode.InnerText = password;
             teacherNode.AppendChild(passNode);
 
-            XmlElement classNode = doc.CreateElement("Class");
-            classNode.InnerText = className;
-            teacherNode.AppendChild(classNode);
+            //XmlElement classNode = doc.CreateElement("Class");
+            //classNode.InnerText = className;
+            //teacherNode.AppendChild(classNode);
 
             // Append the teacher node to the root
             root.AppendChild(teacherNode);
@@ -381,10 +381,10 @@ namespace Attendance_Management_System.Forms
         }
 
         // Event handler for form load
-        private void UserControlAddTeacher_Load(object sender, EventArgs e)
-        {
-            PopulateClassComboBox();
-        }
+        //private void UserControlAddTeacher_Load(object sender, EventArgs e)
+        //{
+        //    PopulateClassComboBox();
+        //}
 
         private void tabControlAddTeacher_Selected(object sender, TabControlEventArgs e)
         {

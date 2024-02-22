@@ -30,8 +30,6 @@
         {
             tabControlAddTeacher = new TabControl();
             tabPageAdd = new TabPage();
-            labelClass = new Label();
-            comboBoxClass = new ComboBox();
             buttonAdd = new Button();
             textBoxPass = new TextBox();
             labelPass = new Label();
@@ -45,8 +43,6 @@
             tabPageUpdate = new TabPage();
             buttonDelete = new Button();
             buttonFInd = new Button();
-            labelUpClass = new Label();
-            comboBoxUpClass = new ComboBox();
             buttonUpdate = new Button();
             textBoxUpPass = new TextBox();
             labelUpPass = new Label();
@@ -77,8 +73,6 @@
             // 
             // tabPageAdd
             // 
-            tabPageAdd.Controls.Add(labelClass);
-            tabPageAdd.Controls.Add(comboBoxClass);
             tabPageAdd.Controls.Add(buttonAdd);
             tabPageAdd.Controls.Add(textBoxPass);
             tabPageAdd.Controls.Add(labelPass);
@@ -96,24 +90,6 @@
             tabPageAdd.TabIndex = 0;
             tabPageAdd.Text = "Add Teacher";
             tabPageAdd.UseVisualStyleBackColor = true;
-            // 
-            // labelClass
-            // 
-            labelClass.AutoSize = true;
-            labelClass.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            labelClass.Location = new Point(86, 294);
-            labelClass.Name = "labelClass";
-            labelClass.Size = new Size(44, 20);
-            labelClass.TabIndex = 11;
-            labelClass.Text = "Class";
-            // 
-            // comboBoxClass
-            // 
-            comboBoxClass.FormattingEnabled = true;
-            comboBoxClass.Location = new Point(83, 323);
-            comboBoxClass.Name = "comboBoxClass";
-            comboBoxClass.Size = new Size(210, 28);
-            comboBoxClass.TabIndex = 10;
             // 
             // buttonAdd
             // 
@@ -215,8 +191,6 @@
             // 
             tabPageUpdate.Controls.Add(buttonDelete);
             tabPageUpdate.Controls.Add(buttonFInd);
-            tabPageUpdate.Controls.Add(labelUpClass);
-            tabPageUpdate.Controls.Add(comboBoxUpClass);
             tabPageUpdate.Controls.Add(buttonUpdate);
             tabPageUpdate.Controls.Add(textBoxUpPass);
             tabPageUpdate.Controls.Add(labelUpPass);
@@ -262,24 +236,6 @@
             buttonFInd.Text = "Find";
             buttonFInd.UseVisualStyleBackColor = false;
             buttonFInd.Click += buttonFInd_Click;
-            // 
-            // labelUpClass
-            // 
-            labelUpClass.AutoSize = true;
-            labelUpClass.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            labelUpClass.Location = new Point(86, 305);
-            labelUpClass.Name = "labelUpClass";
-            labelUpClass.Size = new Size(44, 20);
-            labelUpClass.TabIndex = 21;
-            labelUpClass.Text = "Class";
-            // 
-            // comboBoxUpClass
-            // 
-            comboBoxUpClass.FormattingEnabled = true;
-            comboBoxUpClass.Location = new Point(83, 336);
-            comboBoxUpClass.Name = "comboBoxUpClass";
-            comboBoxUpClass.Size = new Size(220, 28);
-            comboBoxUpClass.TabIndex = 20;
             // 
             // buttonUpdate
             // 
@@ -384,7 +340,6 @@
             Controls.Add(tabControlAddTeacher);
             Name = "UserControlAddTeacher";
             Size = new Size(1400, 900);
-            Load += UserControlAddTeacher_Load;
             tabControlAddTeacher.ResumeLayout(false);
             tabPageAdd.ResumeLayout(false);
             tabPageAdd.PerformLayout();
@@ -397,8 +352,6 @@
 
         private TabControl tabControlAddTeacher;
         private TabPage tabPageAdd;
-        private Label labelClass;
-        private ComboBox comboBoxClass;
         private Button buttonAdd;
         private TextBox textBoxPass;
         private Label labelPass;
@@ -412,8 +365,6 @@
         private TabPage tabPageUpdate;
         private Button buttonDelete;
         private Button buttonFInd;
-        private Label labelUpClass;
-        private ComboBox comboBoxUpClass;
         private Button buttonUpdate;
         private TextBox textBoxUpPass;
         private Label labelUpPass;
