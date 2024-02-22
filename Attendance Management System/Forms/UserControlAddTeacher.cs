@@ -241,7 +241,7 @@ namespace Attendance_Management_System.Forms
                             new XElement("ID", textBoxUpID.Text.Trim()),
                             new XElement("Email", textBoxUpEmail.Text.Trim()),
                             new XElement("Password", textBoxUpPass.Text.Trim())
-                            //new XElement("Class", comboBoxUpClass.SelectedItem.ToString())
+                        //new XElement("Class", comboBoxUpClass.SelectedItem.ToString())
                         )
 
                 );
@@ -408,7 +408,6 @@ namespace Attendance_Management_System.Forms
             DeleteTeacher();
         }
 
-        
     }
 
 

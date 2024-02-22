@@ -1,3 +1,4 @@
+using Attendance_Management_system;
 using Attendance_Management_System.PAL.forms;
 
 namespace Attendance_Management_System.Forms
@@ -14,7 +15,7 @@ namespace Attendance_Management_System.Forms
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new MainForm());
+            Application.Run(new FormMain());
         }
     }
 }

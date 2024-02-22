@@ -91,9 +91,9 @@ namespace Attendance_Management_System.Forms
 
             // Write student data to users.xml file
             WriteStudentToXml(name, id, email, password, className);
-            
+
             MessageBox.Show("Student added successfully!");
-            textBoxID.Clear(); 
+            textBoxID.Clear();
             textBoxName.Clear();
             textBoxEmail.Clear();
             textBoxPass.Clear();
@@ -386,5 +386,7 @@ namespace Attendance_Management_System.Forms
         {
             DeleteStudent();
         }
+
+       
     }
 }

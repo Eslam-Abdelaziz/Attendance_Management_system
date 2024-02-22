@@ -64,10 +64,10 @@
             tabControlAddTeacher.Anchor = AnchorStyles.None;
             tabControlAddTeacher.Controls.Add(tabPageAdd);
             tabControlAddTeacher.Controls.Add(tabPageUpdate);
-            tabControlAddTeacher.Location = new Point(80, 43);
+            tabControlAddTeacher.Location = new Point(0, 3);
             tabControlAddTeacher.Name = "tabControlAddTeacher";
             tabControlAddTeacher.SelectedIndex = 0;
-            tabControlAddTeacher.Size = new Size(1102, 688);
+            tabControlAddTeacher.Size = new Size(939, 503);
             tabControlAddTeacher.TabIndex = 2;
             tabControlAddTeacher.Selected += tabControlAddTeacher_Selected;
             // 
@@ -86,7 +86,7 @@
             tabPageAdd.Location = new Point(4, 4);
             tabPageAdd.Name = "tabPageAdd";
             tabPageAdd.Padding = new Padding(3);
-            tabPageAdd.Size = new Size(1094, 655);
+            tabPageAdd.Size = new Size(931, 470);
             tabPageAdd.TabIndex = 0;
             tabPageAdd.Text = "Add Teacher";
             tabPageAdd.UseVisualStyleBackColor = true;
@@ -97,9 +97,9 @@
             buttonAdd.FlatStyle = FlatStyle.Flat;
             buttonAdd.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             buttonAdd.ForeColor = Color.White;
-            buttonAdd.Location = new Point(612, 405);
+            buttonAdd.Location = new Point(227, 311);
             buttonAdd.Name = "buttonAdd";
-            buttonAdd.Size = new Size(146, 44);
+            buttonAdd.Size = new Size(337, 44);
             buttonAdd.TabIndex = 9;
             buttonAdd.Text = "Add";
             buttonAdd.UseVisualStyleBackColor = false;
@@ -204,7 +204,7 @@
             tabPageUpdate.Location = new Point(4, 4);
             tabPageUpdate.Name = "tabPageUpdate";
             tabPageUpdate.Padding = new Padding(3);
-            tabPageUpdate.Size = new Size(1094, 655);
+            tabPageUpdate.Size = new Size(892, 439);
             tabPageUpdate.TabIndex = 1;
             tabPageUpdate.Text = "Update Teacher";
             tabPageUpdate.UseVisualStyleBackColor = true;
@@ -215,7 +215,7 @@
             buttonDelete.FlatStyle = FlatStyle.Flat;
             buttonDelete.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             buttonDelete.ForeColor = Color.White;
-            buttonDelete.Location = new Point(701, 397);
+            buttonDelete.Location = new Point(450, 349);
             buttonDelete.Name = "buttonDelete";
             buttonDelete.Size = new Size(152, 43);
             buttonDelete.TabIndex = 23;
@@ -229,7 +229,7 @@
             buttonFInd.FlatStyle = FlatStyle.Flat;
             buttonFInd.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             buttonFInd.ForeColor = Color.White;
-            buttonFInd.Location = new Point(433, 106);
+            buttonFInd.Location = new Point(361, 106);
             buttonFInd.Name = "buttonFInd";
             buttonFInd.Size = new Size(162, 39);
             buttonFInd.TabIndex = 22;
@@ -243,7 +243,7 @@
             buttonUpdate.FlatStyle = FlatStyle.Flat;
             buttonUpdate.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             buttonUpdate.ForeColor = Color.White;
-            buttonUpdate.Location = new Point(543, 397);
+            buttonUpdate.Location = new Point(263, 349);
             buttonUpdate.Name = "buttonUpdate";
             buttonUpdate.Size = new Size(152, 43);
             buttonUpdate.TabIndex = 19;
@@ -254,16 +254,16 @@
             // textBoxUpPass
             // 
             textBoxUpPass.BorderStyle = BorderStyle.FixedSingle;
-            textBoxUpPass.Location = new Point(444, 336);
+            textBoxUpPass.Location = new Point(606, 232);
             textBoxUpPass.Name = "textBoxUpPass";
-            textBoxUpPass.Size = new Size(210, 27);
+            textBoxUpPass.Size = new Size(225, 27);
             textBoxUpPass.TabIndex = 18;
             // 
             // labelUpPass
             // 
             labelUpPass.AutoSize = true;
             labelUpPass.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            labelUpPass.Location = new Point(447, 305);
+            labelUpPass.Location = new Point(606, 189);
             labelUpPass.Name = "labelUpPass";
             labelUpPass.Size = new Size(76, 20);
             labelUpPass.TabIndex = 17;
@@ -272,7 +272,7 @@
             // textBoxUpEmail
             // 
             textBoxUpEmail.BorderStyle = BorderStyle.FixedSingle;
-            textBoxUpEmail.Location = new Point(83, 232);
+            textBoxUpEmail.Location = new Point(36, 232);
             textBoxUpEmail.Name = "textBoxUpEmail";
             textBoxUpEmail.Size = new Size(220, 27);
             textBoxUpEmail.TabIndex = 16;
@@ -281,7 +281,7 @@
             // 
             labelUpEmail.AutoSize = true;
             labelUpEmail.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            labelUpEmail.Location = new Point(86, 199);
+            labelUpEmail.Location = new Point(36, 199);
             labelUpEmail.Name = "labelUpEmail";
             labelUpEmail.Size = new Size(47, 20);
             labelUpEmail.TabIndex = 15;
@@ -308,16 +308,16 @@
             // textBoxUpName
             // 
             textBoxUpName.BorderStyle = BorderStyle.FixedSingle;
-            textBoxUpName.Location = new Point(444, 232);
+            textBoxUpName.Location = new Point(313, 232);
             textBoxUpName.Name = "textBoxUpName";
-            textBoxUpName.Size = new Size(210, 27);
+            textBoxUpName.Size = new Size(229, 27);
             textBoxUpName.TabIndex = 12;
             // 
             // labelUpName
             // 
             labelUpName.AutoSize = true;
             labelUpName.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            labelUpName.Location = new Point(447, 199);
+            labelUpName.Location = new Point(340, 189);
             labelUpName.Name = "labelUpName";
             labelUpName.Size = new Size(51, 20);
             labelUpName.TabIndex = 11;
@@ -339,7 +339,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(tabControlAddTeacher);
             Name = "UserControlAddTeacher";
-            Size = new Size(1400, 900);
+            Size = new Size(942, 506);
             tabControlAddTeacher.ResumeLayout(false);
             tabPageAdd.ResumeLayout(false);
             tabPageAdd.PerformLayout();
