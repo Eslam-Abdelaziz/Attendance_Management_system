@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
 using System.Xml.Linq;
+using System.Xml.Schema;
 
 namespace Attendance_Management_System.Forms
 {
@@ -201,5 +202,163 @@ namespace Attendance_Management_System.Forms
             }
         }
 
+        private void buttonUpdate_Click(object sender, EventArgs e)
+        {
+            string id = textBoxUpID.Text.Trim();
+            string name = textBoxUpName.Text.Trim();
+            string teacher = comboBoxUpTeacher.SelectedItem.ToString();
+            var classNode = classesDocument.Descendants("Class")
+                .FirstOrDefault(s => s.Element("ID").Value == id);
+
+            if (classNode != null)
+            {
+
+                if (!IsNameUnique(name, id))
+                {
+                    MessageBox.Show("Name already exists. Please enter a unique name.");
+                    return;
+                }
+                // Create a temporary XDocument with the updated student data
+                var updatedClassDocument = new XDocument(
+
+                        new XElement("Class",
+                             new XElement("ID", textBoxUpID.Text.Trim()),
+                            new XElement("Name", textBoxUpName.Text.Trim()),
+                            new XElement("Teacher", comboBoxUpTeacher.SelectedItem.ToString())
+                        )
+
+                );
+
+                // Validate the temporary document against the schema
+                if (ValidateClassData(updatedClassDocument))
+                {
+
+                    TransferClassToNewTeacher(classNode.Element("Name").Value, classNode.Element("Teacher").Value, teacher);
+                    UpdateClassNames(classNode.Element("Name").Value, name);
+
+                    // Update class information
+                    classNode.Element("Name").Value = textBoxUpName.Text.Trim();
+                    classNode.Element("Teacher").Value = comboBoxUpTeacher.SelectedItem.ToString();
+
+                    // Save changes to XML file
+                    classesDocument.Save(classesFilePath);
+                    
+
+                    MessageBox.Show("Class information updated successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Invalid Class data. Please check the entered values.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Class with the provided ID not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private bool ValidateClassData(XDocument classsDocument)
+        {
+            try
+            {
+                // Load XML schema
+                XmlSchemaSet schemaSet = new XmlSchemaSet();
+                schemaSet.Add("", schemaFilePath);
+
+                // Validate the document against the schema
+                classsDocument.Validate(schemaSet, (o, e) =>
+                {
+
+                    throw new Exception(e.Message);
+                });
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("XML validation error: " + ex.Message);
+
+                return false;
+            }
+        }
+        private bool IsNameUnique(string name, string id)
+        {
+            XmlDocument doc = new XmlDocument();
+            doc.Load(classesFilePath);
+
+            XmlNodeList classNodes = doc.SelectNodes("//Class");
+
+            foreach (XmlNode node in classNodes)
+            {
+                string existingName = node.SelectSingleNode("Name").InnerText;
+                string existingID = node.SelectSingleNode("ID").InnerText;
+
+
+                if (existingName == name && existingID != id)
+                {
+                    return false; // Name already exists
+                }
+            }
+
+            return true; //  Name is unique
+        }
+        private void UpdateClassNames(string oldName, string updatedName)
+        {
+            // Load the XML file
+            XmlDocument doc = new XmlDocument();
+            doc.Load(usersFilePath);
+
+            // Select all <Class> nodes with the old class name
+            XmlNodeList classNodes = doc.SelectNodes($"//Class[text()='{oldName}']");
+
+            // Update each <Class> node with the new class name
+            foreach (XmlNode node in classNodes)
+            {
+                node.InnerText = updatedName;
+            }
+
+            // Save the changes back to the XML file
+            doc.Save(usersFilePath);
+        }
+
+        private void TransferClassToNewTeacher(string className, string oldTeacherName, string newTeacherName)
+        {
+            // Load the XML file
+            XmlDocument doc = new XmlDocument();
+            doc.Load(usersFilePath); // Assuming the XML file is named "users.xml" and is in the same directory as your application
+
+            // Find the <Teacher> node with the old teacher's name
+            XmlNode oldTeacherNode = doc.SelectSingleNode($"//Teacher[Name='{oldTeacherName}']");
+            if (oldTeacherNode == null)
+            {
+                // Old teacher not found, handle error or return
+                return;
+            }
+
+            // Find the <Class> node with the specified class name under the old teacher
+            XmlNode classNode = oldTeacherNode.SelectSingleNode($"Class[text()='{className}']");
+            if (classNode == null)
+            {
+                // Class not found under the old teacher, handle error or return
+                return;
+            }
+
+            // Remove the <Class> node from the old teacher's node
+            oldTeacherNode.RemoveChild(classNode);
+
+            // Find or create the <Teacher> node with the new teacher's name
+            XmlNode newTeacherNode = doc.SelectSingleNode($"//Teacher[Name='{newTeacherName}']");
+            if (newTeacherNode != null)
+            {
+                // New teacher not found, create a new <Teacher> node
+                XmlNode newClassNode = doc.CreateElement("Class");
+                newClassNode.InnerText = className;
+                newTeacherNode.AppendChild(newClassNode);
+            }
+            
+
+            // Save the changes back to the XML file
+            doc.Save(usersFilePath);
+        }
     }
 }

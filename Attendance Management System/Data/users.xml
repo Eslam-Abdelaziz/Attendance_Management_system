@@ -11,21 +11,22 @@
     <ID>456</ID>
     <Email>john.smith@example.com</Email>
     <Password>teacherpass</Password>
-    <Class>Math</Class>
+    <Class>English</Class>
+    <Class>Science</Class>
   </Teacher>
   <Teacher>
     <Name>Sarah Johnson</Name>
     <ID>789</ID>
     <Email>sarah.johnson@example.com</Email>
     <Password>teacherpass</Password>
-    <Class>English</Class>
+    <Class>Arts</Class>
   </Teacher>
   <Student>
     <Name>Emma Watson</Name>
     <ID>101</ID>
     <Email>emma.watson@example.com</Email>
     <Password>studentpass</Password>
-    <Class>Math</Class>
+    <Class>Maths</Class>
   </Student>
   <Student>
     <Name>Michael Brown</Name>
@@ -39,7 +40,7 @@
     <ID>103</ID>
     <Email>new.student@example.com</Email>
     <Password>newstudentpass</Password>
-    <Class>Science101</Class>
+    <Class>Science</Class>
   </Student>
   <Student>
     <Name>Ahmed</Name>
@@ -53,7 +54,7 @@
     <ID>99</ID>
     <Email>King@gmail.com</Email>
     <Password>123iudmks</Password>
-    <Class>Science101</Class>
+    <Class>Science</Class>
   </Student>
   <Student>
     <Name>Ahmed</Name>
@@ -74,6 +75,6 @@
     <ID>110</ID>
     <Email>Maxon@gmail.com</Email>
     <Password>12083Klass</Password>
-    <Class>Math</Class>
+    <Class>Maths</Class>
   </Teacher>
 </Users>

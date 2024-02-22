@@ -222,6 +222,7 @@
             buttonUpdate.TabIndex = 15;
             buttonUpdate.Text = "Update";
             buttonUpdate.UseVisualStyleBackColor = false;
+            buttonUpdate.Click += buttonUpdate_Click;
             // 
             // labelUpTeacher
             // 

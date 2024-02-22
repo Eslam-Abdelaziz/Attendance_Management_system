@@ -2,13 +2,13 @@
 <Classes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="classes_shcema.xsd">
   <Class>
     <ID>1</ID>
-    <Name>Math</Name>
+    <Name>Maths</Name>
     <Teacher>Teacher</Teacher>
   </Class>
   <Class>
     <ID>2</ID>
     <Name>Science</Name>
-    <Teacher>Sarah Johnson</Teacher>
+    <Teacher>Smith</Teacher>
   </Class>
   <Class>
     <ID>3</ID>
@@ -17,7 +17,7 @@
   </Class>
   <Class>
     <ID>4</ID>
-    <Name>Art</Name>
-    <Teacher>Teacher</Teacher>
+    <Name>Arts</Name>
+    <Teacher>Sara Johnson</Teacher>
   </Class>
 </Classes>
