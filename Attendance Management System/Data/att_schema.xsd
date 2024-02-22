@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:simpleType name="id">
+		<xs:restriction base="xs:integer">
+			<xs:minInclusive value="1"/>
+			<xs:maxInclusive value="500"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="NameType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="3"/>
+			<xs:pattern value="[A-Za-z ]+"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="attend_status">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="present"/>
+			<xs:enumeration value="absent"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="id" type="id"/>
+	<xs:element name="name" type="NameType"/>
+	<xs:element name="date" type="xs:date"/>
+	<xs:element name="status" type="attend_status"/>
+	<xs:complexType name="complexattend">
+		<xs:sequence>
+			<xs:element ref="id"/>
+			<xs:element ref="name"/>
+			<xs:element ref="date"/>
+			<xs:element ref="status"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="record" type="complexattend"/>
+	<xs:complexType name="class">
+		<xs:sequence>
+			<xs:element ref="record" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="id" use="required"/>
+	</xs:complexType>
+	<xs:element name="class" type="class"/>
+	<xs:complexType name="attendance">
+		<xs:sequence>
+			<xs:element ref="class" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="attendance" type="attendance"/>
+</xs:schema>

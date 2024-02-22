@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+
+    <xs:simpleType name="NameType">
+        <xs:restriction base="xs:string">
+            <xs:minLength value="3"/>
+            <xs:pattern value="[A-Za-z ]+"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="EmailType">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="PassType">
+        <xs:restriction base="xs:string">
+            <xs:minLength value="6"/>
+            <xs:maxLength value="20"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:element name="Name" type="NameType"/>
+    <xs:element name="ID" type="xs:integer"/>
+    <xs:element name="Email" type="EmailType"/>
+    <xs:element name="Password" type="PassType"/>
+    <xs:element name="Class" type="xs:string"/>
+
+    <xs:group name="userGroup">
+        <xs:sequence>
+            <xs:element ref="Name"/>
+            <xs:element ref="ID"/>
+            <xs:element ref="Email"/>
+            <xs:element ref="Password"/>
+            <xs:element ref="Class" minOccurs="0"/>
+        </xs:sequence>
+    </xs:group>
+	
+
+    <xs:complexType name="AdminComplex">
+        <xs:group ref="userGroup"/>
+    </xs:complexType>
+
+    <xs:complexType name="TeacherComplex">
+        <xs:group ref="userGroup"/>
+    </xs:complexType>
+
+    <xs:complexType name="StudentComplex">
+        <xs:group ref="userGroup"/>
+    </xs:complexType>
+
+    <xs:element name="Admin" type="AdminComplex"/>
+    <xs:element name="Teacher" type="TeacherComplex"/>
+    <xs:element name="Student" type="StudentComplex"/>
+
+    <xs:complexType name="UsersComplex">
+        <xs:sequence>
+            <xs:element ref="Admin"/>
+            <xs:element ref="Teacher" maxOccurs="unbounded"/>
+            <xs:element ref="Student" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:element name="Users" type="UsersComplex"/>
+
+</xs:schema>
