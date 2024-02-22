@@ -77,6 +77,7 @@ namespace Attendance_Management_System.Forms
 
             // Write student data to users.xml file
             WriteClassToXml(name, id, teacherName);
+            AddClassToTeacher(teacherName, name);
 
             MessageBox.Show("Class added successfully!");
             textBoxID.Clear();
@@ -154,6 +155,21 @@ namespace Attendance_Management_System.Forms
 
             // Save the XML document
             doc.Save(classesFilePath);
+        }
+
+        private void AddClassToTeacher(string teacherName,string className) {
+            XmlDocument doc = new XmlDocument();
+            doc.Load(usersFilePath);
+
+            XmlNode teacherNode = doc.SelectSingleNode($"//Teacher[Name='{teacherName}']");
+            if (teacherNode != null)
+            {
+                XmlNode newClassNode = doc.CreateElement("Class");
+                newClassNode.InnerText = className;
+                teacherNode.AppendChild(newClassNode);
+            }
+
+            doc.Save(usersFilePath);
         }
 
         private void LoadClassesData()
@@ -242,7 +258,7 @@ namespace Attendance_Management_System.Forms
 
                     // Save changes to XML file
                     classesDocument.Save(classesFilePath);
-                    
+
 
                     MessageBox.Show("Class information updated successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -325,13 +341,13 @@ namespace Attendance_Management_System.Forms
         {
             // Load the XML file
             XmlDocument doc = new XmlDocument();
-            doc.Load(usersFilePath); // Assuming the XML file is named "users.xml" and is in the same directory as your application
+            doc.Load(usersFilePath); 
 
             // Find the <Teacher> node with the old teacher's name
             XmlNode oldTeacherNode = doc.SelectSingleNode($"//Teacher[Name='{oldTeacherName}']");
             if (oldTeacherNode == null)
             {
-                // Old teacher not found, handle error or return
+                // Old teacher not found
                 return;
             }
 
@@ -339,7 +355,7 @@ namespace Attendance_Management_System.Forms
             XmlNode classNode = oldTeacherNode.SelectSingleNode($"Class[text()='{className}']");
             if (classNode == null)
             {
-                // Class not found under the old teacher, handle error or return
+                // Class not found under the old teacher
                 return;
             }
 
@@ -355,10 +371,75 @@ namespace Attendance_Management_System.Forms
                 newClassNode.InnerText = className;
                 newTeacherNode.AppendChild(newClassNode);
             }
-            
+
 
             // Save the changes back to the XML file
             doc.Save(usersFilePath);
+        }
+
+        private void DeleteClass()
+        {
+            // Get the ID of the student to delete
+            int idToDelete;
+            string name = textBoxUpName.Text;
+            if (!int.TryParse(textBoxUpID.Text, out idToDelete))
+            {
+                MessageBox.Show("Invalid ID. Please enter a valid numeric ID.");
+                return;
+            }
+
+            // Load the XML document
+            XmlDocument doc = new XmlDocument();
+            XmlDocument users = new XmlDocument();
+            doc.Load(classesFilePath);
+            users.Load(usersFilePath);
+
+            // Check if any student has the same class name
+
+            XmlNodeList studentNodes = users.SelectNodes($"//Student[Class='{name}']");
+            if (studentNodes.Count > 0)
+            {
+                MessageBox.Show($"Cannot delete class '{name}' because there are students associated with it.");
+                return;
+            }
+
+            // Find the student node with the matching ID
+            XmlNode classNodeToDelete = doc.SelectSingleNode($"//Class[ID={idToDelete}]");
+
+            if (classNodeToDelete != null)
+            {
+                // Remove the student node from the XML document
+                classNodeToDelete.ParentNode.RemoveChild(classNodeToDelete);
+
+                // Save the changes to the XML file
+                doc.Save(classesFilePath);
+                RemoveClassFromTeacher(name);
+
+                MessageBox.Show("Class deleted successfully!");
+            }
+            else
+            {
+                MessageBox.Show("Class not found with the given ID.");
+            }
+        }
+
+        private void RemoveClassFromTeacher(string className)
+        {
+            XmlDocument doc = new XmlDocument();
+            doc.Load(usersFilePath);
+
+            XmlNode classNodeToDelete = doc.SelectSingleNode($"//Teacher//Class[text()='{className}']");
+            if (classNodeToDelete != null)
+            {
+                classNodeToDelete.ParentNode.RemoveChild(classNodeToDelete);
+            }
+
+            doc.Save(usersFilePath);
+        }
+
+        private void buttonDelete_Click(object sender, EventArgs e)
+        {
+            DeleteClass();
         }
     }
 }
