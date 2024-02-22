@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Xml.Linq;
 using System.Xml.Schema;
 using System.Xml;
+using Microsoft.VisualBasic.ApplicationServices;
 
 namespace Attendance_Management_System.Forms
 {
@@ -18,6 +19,7 @@ namespace Attendance_Management_System.Forms
         private XDocument teachersDocument;
         private string teachersFilePath = @"C:\Iti\C#XML\Attendance_Management_system\Attendance Management System\Data\users.xml";
         private string schemaFilePath = @"C:\Iti\C#XML\Attendance_Management_system\Attendance Management System\Data\users_schema.xsd";
+        private string classesFilePath = @"C:\Iti\C#XML\Attendance_Management_system\Attendance Management System\Data\classes.xml";
 
 
         public UserControlAddTeacher()
@@ -341,6 +343,7 @@ namespace Attendance_Management_System.Forms
         {
             // Get the ID of the teacher to delete
             int idToDelete;
+            string name = textBoxUpName.Text;
             if (!int.TryParse(textBoxUpID.Text, out idToDelete))
             {
                 MessageBox.Show("Invalid ID. Please enter a valid numeric ID.");
@@ -349,7 +352,16 @@ namespace Attendance_Management_System.Forms
 
             // Load the XML document
             XmlDocument doc = new XmlDocument();
+            XmlDocument classes = new XmlDocument();
             doc.Load(teachersFilePath);
+            classes.Load(classesFilePath);
+
+            XmlNodeList classesNodes = classes.SelectNodes($"//Class[Teacher='{name}']");
+            if (classesNodes.Count > 0)
+            {
+                MessageBox.Show($"Cannot delete Teacher '{name}' because there are classes associated with him/her.");
+                return;
+            }
 
             // Find the teacher node with the matching ID
             XmlNode teacherNodeToDelete = doc.SelectSingleNode($"//Teacher[ID={idToDelete}]");
