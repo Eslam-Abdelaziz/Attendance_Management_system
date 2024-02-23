@@ -47,6 +47,7 @@ namespace Attendance_Management_System.Forms
             panel2 = new Panel();
             label2 = new Label();
             label1 = new Label();
+            tabPage1 = new TabPage();
             panel1.SuspendLayout();
             tabControl1.SuspendLayout();
             tabPageMarkAttendence.SuspendLayout();
@@ -58,7 +59,7 @@ namespace Attendance_Management_System.Forms
             panel1.Anchor = AnchorStyles.None;
             panel1.BackColor = Color.White;
             panel1.Controls.Add(tabControl1);
-            panel1.Location = new Point(0, 3);
+            panel1.Location = new Point(42, 16);
             panel1.Name = "panel1";
             panel1.Size = new Size(942, 501);
             panel1.TabIndex = 0;
@@ -70,6 +71,7 @@ namespace Attendance_Management_System.Forms
             tabControl1.Alignment = TabAlignment.Bottom;
             tabControl1.Anchor = AnchorStyles.None;
             tabControl1.Controls.Add(tabPageMarkAttendence);
+            tabControl1.Controls.Add(tabPage1);
             tabControl1.Location = new Point(0, 0);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
@@ -96,6 +98,7 @@ namespace Attendance_Management_System.Forms
             tabPageMarkAttendence.TabIndex = 0;
             tabPageMarkAttendence.Text = "Mark Attendence";
             tabPageMarkAttendence.UseVisualStyleBackColor = true;
+            tabPageMarkAttendence.Click += tabPageMarkAttendence_Click;
             // 
             // dataGridViewMarkAttendence
             // 
@@ -218,6 +221,16 @@ namespace Attendance_Management_System.Forms
             label1.TabIndex = 0;
             label1.Text = "Mark Attendence";
             // 
+            // tabPage1
+            // 
+            tabPage1.Location = new Point(4, 4);
+            tabPage1.Name = "tabPage1";
+            tabPage1.Padding = new Padding(3);
+            tabPage1.Size = new Size(934, 473);
+            tabPage1.TabIndex = 1;
+            tabPage1.Text = "tabPage1";
+            tabPage1.UseVisualStyleBackColor = true;
+            // 
             // UserControlMarkAttendance
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -225,7 +238,7 @@ namespace Attendance_Management_System.Forms
             BackColor = Color.White;
             Controls.Add(panel1);
             Name = "UserControlMarkAttendance";
-            Size = new Size(942, 501);
+            Size = new Size(1027, 526);
             panel1.ResumeLayout(false);
             tabControl1.ResumeLayout(false);
             tabPageMarkAttendence.ResumeLayout(false);
@@ -255,5 +268,6 @@ namespace Attendance_Management_System.Forms
         private DataGridViewCheckBoxColumn Column3;
         private DataGridViewTextBoxColumn Column4;
         private EventHandler comboBoxClass_SelectedIndexChanged;
+        private TabPage tabPage1;
     }
 }

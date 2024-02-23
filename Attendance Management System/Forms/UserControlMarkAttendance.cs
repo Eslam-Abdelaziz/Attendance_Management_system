@@ -39,10 +39,15 @@ namespace Attendance_Management_System.Forms
 
         private void comboBoxClass_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-           // if(Attendence.Attendence.isMarkAttendence(dateTimePicker1.Text,comboBoxClass.SelectedItem.ToString(),sql))
-           // {
-           //     Attendence.Attendence.displayAndSearchAllData("");
-           // }
+            // if(Attendence.Attendence.isMarkAttendence(dateTimePicker1.Text,comboBoxClass.SelectedItem.ToString(),sql))
+            // {
+            //     Attendence.Attendence.displayAndSearchAllData("");
+            // }
+        }
+
+        private void tabPageMarkAttendence_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
