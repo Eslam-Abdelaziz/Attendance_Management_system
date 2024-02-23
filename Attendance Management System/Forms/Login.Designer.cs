@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             pictureBoxClose = new PictureBox();
             pictureBoxMinimize = new PictureBox();
             groupBox1 = new GroupBox();
@@ -40,7 +41,6 @@
             panel2 = new Panel();
             textBoxName = new TextBox();
             panel3 = new Panel();
-            textBox1 = new TextBox();
             pictureBoxShow = new PictureBox();
             pictureBoxHide = new PictureBox();
             textBoxPassword = new TextBox();
@@ -51,6 +51,7 @@
             label5 = new Label();
             label6 = new Label();
             label7 = new Label();
+            toolTip = new ToolTip(components);
             ((System.ComponentModel.ISupportInitialize)pictureBoxClose).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxMinimize).BeginInit();
             groupBox1.SuspendLayout();
@@ -73,6 +74,7 @@
             pictureBoxClose.TabIndex = 0;
             pictureBoxClose.TabStop = false;
             pictureBoxClose.Click += pictureBoxClose_click;
+            pictureBoxClose.MouseHover += pictureBoxClose_MouseHover;
             // 
             // pictureBoxMinimize
             // 
@@ -85,6 +87,7 @@
             pictureBoxMinimize.TabIndex = 1;
             pictureBoxMinimize.TabStop = false;
             pictureBoxMinimize.Click += pictureBoxMinimize_click;
+            pictureBoxMinimize.MouseHover += pictureBoxMinimize_MouseHover;
             // 
             // groupBox1
             // 
@@ -169,6 +172,7 @@
             buttonLogin.TextAlign = ContentAlignment.MiddleRight;
             buttonLogin.TextImageRelation = TextImageRelation.ImageBeforeText;
             buttonLogin.UseVisualStyleBackColor = false;
+            buttonLogin.Click += buttonLogin_Click;
             // 
             // label1
             // 
@@ -198,11 +202,12 @@
             textBoxName.Size = new Size(317, 20);
             textBoxName.TabIndex = 1;
             textBoxName.TextChanged += textBoxName_TextChanged;
+            textBoxName.KeyPress += textBoxName_KeyPress;
+            textBoxName.KeyUp += textBoxName_KeyUp;
             // 
             // panel3
             // 
             panel3.BorderStyle = BorderStyle.FixedSingle;
-            panel3.Controls.Add(textBox1);
             panel3.Controls.Add(pictureBoxShow);
             panel3.Controls.Add(pictureBoxHide);
             panel3.Controls.Add(textBoxPassword);
@@ -210,14 +215,6 @@
             panel3.Name = "panel3";
             panel3.Size = new Size(330, 45);
             panel3.TabIndex = 9;
-            // 
-            // textBox1
-            // 
-            textBox1.BorderStyle = BorderStyle.None;
-            textBox1.Location = new Point(6, 11);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(278, 20);
-            textBox1.TabIndex = 1;
             // 
             // pictureBoxShow
             // 
@@ -231,12 +228,15 @@
             pictureBoxShow.Size = new Size(45, 45);
             pictureBoxShow.TabIndex = 4;
             pictureBoxShow.TabStop = false;
+            pictureBoxShow.Click += pictureBoxShow_Click;
+            pictureBoxShow.MouseHover += pictureBoxShow_MouseHover;
             // 
             // pictureBoxHide
             // 
             pictureBoxHide.BorderStyle = BorderStyle.FixedSingle;
             pictureBoxHide.Cursor = Cursors.Hand;
-            pictureBoxHide.ImageLocation = "center";
+            pictureBoxHide.Image = Properties.Resources.hide;
+            pictureBoxHide.ImageLocation = "";
             pictureBoxHide.Location = new Point(284, -1);
             pictureBoxHide.Margin = new Padding(4);
             pictureBoxHide.Name = "pictureBoxHide";
@@ -244,15 +244,19 @@
             pictureBoxHide.Size = new Size(45, 45);
             pictureBoxHide.TabIndex = 3;
             pictureBoxHide.TabStop = false;
+            pictureBoxHide.Click += pictureBoxHide_click;
+            pictureBoxHide.MouseHover += pictureBoxHide_MouseHover;
             // 
             // textBoxPassword
             // 
             textBoxPassword.BorderStyle = BorderStyle.None;
-            textBoxPassword.Location = new Point(10, 8);
+            textBoxPassword.Location = new Point(6, 11);
             textBoxPassword.Name = "textBoxPassword";
-            textBoxPassword.Size = new Size(240, 20);
+            textBoxPassword.Size = new Size(271, 20);
             textBoxPassword.TabIndex = 2;
             textBoxPassword.UseSystemPasswordChar = true;
+            textBoxPassword.KeyPress += textBoxPassword_KeyPress;
+            textBoxPassword.KeyUp += textBoxPassword_KeyUp;
             // 
             // panel1
             // 
@@ -354,6 +358,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Login";
             WindowState = FormWindowState.Maximized;
+            Load += LoginForm_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBoxClose).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxMinimize).EndInit();
             groupBox1.ResumeLayout(false);
@@ -388,12 +393,12 @@
         private Panel panel2;
         private TextBox textBoxName;
         private Panel panel3;
-        private TextBox textBox1;
         private PictureBox pictureBox1;
         private Label label3;
         private Label label4;
         private Label label5;
         private Label label6;
         private Label label7;
+        private ToolTip toolTip;
     }
 }
