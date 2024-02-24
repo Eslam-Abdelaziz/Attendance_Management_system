@@ -65,7 +65,6 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(895, 585);
             panel1.TabIndex = 0;
-            panel1.Paint += panel1_Paint;
             // 
             // buttonCancel1
             // 
@@ -149,6 +148,8 @@
             textBoxId.Name = "textBoxId";
             textBoxId.Size = new Size(317, 20);
             textBoxId.TabIndex = 2;
+            textBoxId.KeyPress += textBoxId_KeyPress;
+            textBoxId.KeyUp += textBoxId_KeyUp;
             // 
             // Email
             // 
@@ -176,6 +177,8 @@
             textBoxEmail.Name = "textBoxEmail";
             textBoxEmail.Size = new Size(317, 20);
             textBoxEmail.TabIndex = 1;
+            textBoxEmail.KeyPress += textBoxEmail_keyPress;
+            textBoxEmail.KeyUp += textBoxEmail_keyUp;
             // 
             // pictureBox1
             // 

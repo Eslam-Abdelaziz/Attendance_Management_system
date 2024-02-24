@@ -39,7 +39,6 @@
             pictureBoxHide_Confirm = new PictureBox();
             textBoxConfirmPassword = new TextBox();
             buttonCancel1 = new Button();
-            pictureBoxError = new PictureBox();
             labelError = new Label();
             buttonChange = new Button();
             ComfirmPassword = new Label();
@@ -53,16 +52,16 @@
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxShow_Confirm).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxHide_Confirm).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBoxError).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
+            panel1.BackColor = Color.White;
+            panel1.BorderStyle = BorderStyle.FixedSingle;
             panel1.Controls.Add(panel2);
             panel1.Controls.Add(panel3);
             panel1.Controls.Add(buttonCancel1);
-            panel1.Controls.Add(pictureBoxError);
             panel1.Controls.Add(labelError);
             panel1.Controls.Add(buttonChange);
             panel1.Controls.Add(ComfirmPassword);
@@ -71,7 +70,7 @@
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(936, 577);
+            panel1.Size = new Size(895, 585);
             panel1.TabIndex = 0;
             // 
             // panel2
@@ -196,28 +195,15 @@
             buttonCancel1.UseVisualStyleBackColor = false;
             buttonCancel1.Click += buttonCancel1_Click;
             // 
-            // pictureBoxError
-            // 
-            pictureBoxError.Cursor = Cursors.Hand;
-            pictureBoxError.Image = Properties.Resources.important;
-            pictureBoxError.Location = new Point(335, 379);
-            pictureBoxError.Margin = new Padding(4);
-            pictureBoxError.Name = "pictureBoxError";
-            pictureBoxError.Size = new Size(30, 30);
-            pictureBoxError.TabIndex = 31;
-            pictureBoxError.TabStop = false;
-            pictureBoxError.Visible = false;
-            // 
             // labelError
             // 
             labelError.AutoSize = true;
             labelError.Font = new Font("Century Gothic", 11F);
             labelError.ForeColor = Color.FromArgb(234, 73, 73);
-            labelError.Location = new Point(374, 384);
+            labelError.Location = new Point(310, 372);
             labelError.Name = "labelError";
-            labelError.Size = new Size(203, 20);
+            labelError.Size = new Size(0, 20);
             labelError.TabIndex = 30;
-            labelError.Text = "Invalid Email or National Id";
             labelError.Visible = false;
             // 
             // buttonChange
@@ -260,7 +246,7 @@
             // 
             pictureBox1.Anchor = AnchorStyles.None;
             pictureBox1.Image = Properties.Resources.forge_password;
-            pictureBox1.Location = new Point(388, 32);
+            pictureBox1.Location = new Point(366, 35);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(150, 150);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -271,7 +257,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(936, 577);
+            ClientSize = new Size(895, 585);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "New_Password";
@@ -287,7 +273,6 @@
             panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxShow_Confirm).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxHide_Confirm).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBoxError).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
@@ -296,7 +281,6 @@
 
         private Panel panel1;
         private Button buttonCancel1;
-        private PictureBox pictureBoxError;
         private Label labelError;
         private Button buttonChange;
         private Label ComfirmPassword;

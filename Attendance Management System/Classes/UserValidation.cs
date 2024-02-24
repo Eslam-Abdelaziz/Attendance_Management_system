@@ -24,9 +24,8 @@ namespace Attendance_Management_System.Classes
         public static string IsValidNamePass(string username, string password)
         {
             XmlDocument xmlDoc = new XmlDocument();
-            string XmlFilePath = Path.Combine(Directory.GetCurrentDirectory(), "../Data/users.xml");
+            string XmlFilePath = Path.Combine(Directory.GetCurrentDirectory(), "../../../Data/users.xml");
             xmlDoc.Load(XmlFilePath); 
-
             XmlNodeList userList = xmlDoc.SelectNodes("//Users/*");
 
             foreach (XmlNode userNode in userList)
@@ -45,10 +44,10 @@ namespace Attendance_Management_System.Classes
         }
 
 
-        public static void SaveXML(int userId, string newPassword)
+        public static void UpdatePassword(int userId, string newPassword)
         {
             XmlDocument xmlDoc = new XmlDocument();
-            string XmlFilePath = Path.Combine(Directory.GetCurrentDirectory(), "../Data/users.xml");
+            string XmlFilePath = Path.Combine(Directory.GetCurrentDirectory(), "../../../Data/users.xml");
             xmlDoc.Load(XmlFilePath);
 
             XmlNodeList userList = xmlDoc.SelectNodes("//Users/*");
@@ -68,6 +67,25 @@ namespace Attendance_Management_System.Classes
             }
 
             xmlDoc.Save("users.xml");
+        }
+
+        public static XmlNode GetUserByEmailAndId(string email, int id)
+        {
+            XmlDocument xmlDoc = new XmlDocument();
+            string XmlFilePath = Path.Combine(Directory.GetCurrentDirectory(), "../../../Data/users.xml");
+            xmlDoc.Load(XmlFilePath);
+            XmlNodeList userList = xmlDoc.SelectNodes("//Users/*");
+
+            foreach (XmlNode userNode in userList)
+            {
+                XmlNode emailNode = userNode.SelectSingleNode("Email");
+                XmlNode idNode = userNode.SelectSingleNode("ID");
+                if (emailNode != null && idNode != null && emailNode.InnerText == email && idNode.InnerText == id.ToString())
+                {
+                    return userNode;
+                }
+            }
+            return null; 
         }
     }
 }
