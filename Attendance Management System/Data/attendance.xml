@@ -1,6 +1,6 @@
 <attendance  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:noNamespaceSchemaLocation="att_schema.xsd">
-    <class id="101">
+    <class id="1">
         <record>
             <id>1</id>
             <name>John Doe</name>
@@ -14,7 +14,7 @@
             <status>absent</status>
         </record>
     </class>
-    <class id="201">
+    <class id="2">
         <record>
             <id>3</id>
             <name>Alice Johnson</name>
@@ -28,5 +28,7 @@
             <status>present</status>
         </record>
     </class>
+	<class id="3">
+	</class>
 </attendance>
 

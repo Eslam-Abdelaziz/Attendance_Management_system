@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Users xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="users_schema.xsd">
   <Admin>
     <Name>Admin User</Name>
@@ -7,38 +7,76 @@
     <Password>adminpass</Password>
   </Admin>
   <Teacher>
-    <Name>John Smith</Name>
+    <Name>Smith</Name>
     <ID>456</ID>
     <Email>john.smith@example.com</Email>
     <Password>teacherpass</Password>
-    <Class>Math101</Class>
+    <Class>English</Class>
+    <Class>Science</Class>
+    <Class>Software</Class>
   </Teacher>
   <Teacher>
     <Name>Sarah Johnson</Name>
     <ID>789</ID>
     <Email>sarah.johnson@example.com</Email>
     <Password>teacherpass</Password>
-    <Class>English101</Class>
+    <Class>Arts</Class>
+    <Class>Databases</Class>
   </Teacher>
   <Student>
     <Name>Emma Watson</Name>
     <ID>101</ID>
     <Email>emma.watson@example.com</Email>
     <Password>studentpass</Password>
-    <Class>Math101</Class>
+    <Class>Maths</Class>
   </Student>
   <Student>
     <Name>Michael Brown</Name>
     <ID>102</ID>
     <Email>michael.brown@example.com</Email>
     <Password>studentpass</Password>
-    <Class>English101</Class>
+    <Class>English</Class>
   </Student>
   <Student>
     <Name>New Student</Name>
     <ID>103</ID>
     <Email>new.student@example.com</Email>
     <Password>newstudentpass</Password>
-    <Class>Science101</Class>
+    <Class>Science</Class>
   </Student>
+  <Student>
+    <Name>Ahmed</Name>
+    <ID>12</ID>
+    <Email>Ahmed@msmail.com</Email>
+    <Password>12345Test</Password>
+    <Class>Science</Class>
+  </Student>
+  <Student>
+    <Name>King</Name>
+    <ID>99</ID>
+    <Email>King@gmail.com</Email>
+    <Password>123iudmks</Password>
+    <Class>Science</Class>
+  </Student>
+  <Student>
+    <Name>Ahmed</Name>
+    <ID>104</ID>
+    <Email>Junkd@gmail.com</Email>
+    <Password>12398Mjsdj</Password>
+    <Class>English</Class>
+  </Student>
+  <Student>
+    <Name>khaled</Name>
+    <ID>120</ID>
+    <Email>sonhg@gmail.com</Email>
+    <Password>098Ajdmm3</Password>
+    <Class>English</Class>
+  </Student>
+  <Teacher>
+    <Name>Teache</Name>
+    <ID>110</ID>
+    <Email>Maxon@gmail.com</Email>
+    <Password>12083Klass</Password>
+    <Class>Maths</Class>
+  </Teacher>
 </Users>

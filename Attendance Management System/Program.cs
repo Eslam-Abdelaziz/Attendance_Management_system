@@ -1,3 +1,6 @@
+using Attendance_Management_system;
+using Attendance_Management_System.PAL.forms;
+
 namespace Attendance_Management_System.Forms
 {
     internal static class Program
