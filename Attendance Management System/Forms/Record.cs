@@ -7,15 +7,16 @@ using System.Xml;
 
 namespace Attendance_Management_System.Forms
 {
-    internal class Record
+    internal class Record 
     {
 
         public string name { get; set; }
         public int id { get; set; }
-        public DateOnly date { get; set; }
-        public string status { get; set; }
+        public DateOnly Date { get; set; }
+        public string Status { get; set; }
 
-
+     
+     
         public static List<Record> GetRecords(string path)
         {
             XmlDocument doc = new XmlDocument();
@@ -28,8 +29,8 @@ namespace Attendance_Management_System.Forms
                 {
                     id = int.Parse(recordNode.SelectSingleNode("id").InnerText),
                     name = recordNode.SelectSingleNode("name").InnerText,
-                    date = DateOnly.Parse(recordNode.SelectSingleNode("date").InnerText),
-                    status = recordNode.SelectSingleNode("status").InnerText,
+                    Date = DateOnly.Parse(recordNode.SelectSingleNode("date").InnerText),
+                    Status = recordNode.SelectSingleNode("status").InnerText,
                 };
                 records.Add(record1);
             }

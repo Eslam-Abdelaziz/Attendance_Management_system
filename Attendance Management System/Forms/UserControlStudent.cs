@@ -21,7 +21,7 @@ namespace Attendance_Management_System.Forms
         {
 
             ///////////////////////////////
-           var recordList = Record.GetRecords(@"C:\Users\nada elhabshy\source\repos\Attendance_Management_system\Attendance Management System\Data\attendance.xml");
+            var recordList = Record.GetRecords(@"C:\Users\nada elhabshy\source\repos\Attendance_Management_system\Attendance Management System\Data\attendance.xml");
 
 
             int studentId = 1; // Example student ID
@@ -31,18 +31,18 @@ namespace Attendance_Management_System.Forms
             if (record != null)
             {
                 // Bind student data to the DataGridView
-               
-                    dataGridViewStudent.Rows.Add(record.id, record.name, record.status, record.date);
-               
+
+                dataGridViewStudent.Rows.Add(record.id, record.name, record.Status, record.Date);
+
             }
             else
             {
-               
+
                 // Clear existing rows
                 dataGridViewStudent.Visible = false;
 
                 // Show a message or perform any other actions as needed
-                dataGridViewStudent.Visible = true;
+              //  dataGridViewStudent.Visible = true;
 
             }
 
@@ -53,6 +53,14 @@ namespace Attendance_Management_System.Forms
 
         }
 
-      
+        private void tabPageMarkAttendence_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -32,26 +32,18 @@ namespace Attendance_Management_System.Forms
             panel1 = new Panel();
             tabControl1 = new TabControl();
             tabPageMarkAttendence = new TabPage();
-            dataGridViewMarkAttendence = new DataGridView();
-            Column1 = new DataGridViewTextBoxColumn();
-            Column2 = new DataGridViewTextBoxColumn();
-            Column3 = new DataGridViewCheckBoxColumn();
-            Column4 = new DataGridViewTextBoxColumn();
+            dataGridViewMarkAttendance = new DataGridView();
             comboBoxClass = new ComboBox();
             label3 = new Label();
             dateTimePicker1 = new DateTimePicker();
             panel6 = new Panel();
-            panel5 = new Panel();
-            panel4 = new Panel();
-            panel3 = new Panel();
-            panel2 = new Panel();
             label2 = new Label();
             label1 = new Label();
             tabPage1 = new TabPage();
             panel1.SuspendLayout();
             tabControl1.SuspendLayout();
             tabPageMarkAttendence.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridViewMarkAttendence).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewMarkAttendance).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -63,7 +55,6 @@ namespace Attendance_Management_System.Forms
             panel1.Name = "panel1";
             panel1.Size = new Size(942, 501);
             panel1.TabIndex = 0;
-            panel1.Paint += panel1_Paint;
             // 
             // tabControl1
             // 
@@ -80,15 +71,11 @@ namespace Attendance_Management_System.Forms
             // 
             // tabPageMarkAttendence
             // 
-            tabPageMarkAttendence.Controls.Add(dataGridViewMarkAttendence);
+            tabPageMarkAttendence.Controls.Add(dataGridViewMarkAttendance);
             tabPageMarkAttendence.Controls.Add(comboBoxClass);
             tabPageMarkAttendence.Controls.Add(label3);
             tabPageMarkAttendence.Controls.Add(dateTimePicker1);
             tabPageMarkAttendence.Controls.Add(panel6);
-            tabPageMarkAttendence.Controls.Add(panel5);
-            tabPageMarkAttendence.Controls.Add(panel4);
-            tabPageMarkAttendence.Controls.Add(panel3);
-            tabPageMarkAttendence.Controls.Add(panel2);
             tabPageMarkAttendence.Controls.Add(label2);
             tabPageMarkAttendence.Controls.Add(label1);
             tabPageMarkAttendence.Location = new Point(4, 4);
@@ -100,42 +87,19 @@ namespace Attendance_Management_System.Forms
             tabPageMarkAttendence.UseVisualStyleBackColor = true;
             tabPageMarkAttendence.Click += tabPageMarkAttendence_Click;
             // 
-            // dataGridViewMarkAttendence
+            // dataGridViewMarkAttendance
             // 
-            dataGridViewMarkAttendence.AllowUserToAddRows = false;
-            dataGridViewMarkAttendence.AllowUserToDeleteRows = false;
-            dataGridViewMarkAttendence.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewMarkAttendence.BackgroundColor = Color.White;
-            dataGridViewMarkAttendence.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewMarkAttendence.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewMarkAttendence.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4 });
-            dataGridViewMarkAttendence.Location = new Point(-1, 163);
-            dataGridViewMarkAttendence.Name = "dataGridViewMarkAttendence";
-            dataGridViewMarkAttendence.ScrollBars = ScrollBars.Vertical;
-            dataGridViewMarkAttendence.Size = new Size(935, 150);
-            dataGridViewMarkAttendence.TabIndex = 10;
-            // 
-            // Column1
-            // 
-            Column1.HeaderText = "ID";
-            Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            Column2.HeaderText = "Student Name";
-            Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            Column3.HeaderText = "Status";
-            Column3.Name = "Column3";
-            Column3.Resizable = DataGridViewTriState.True;
-            Column3.SortMode = DataGridViewColumnSortMode.Automatic;
-            // 
-            // Column4
-            // 
-            Column4.HeaderText = "Status";
-            Column4.Name = "Column4";
+            dataGridViewMarkAttendance.AllowUserToAddRows = false;
+            dataGridViewMarkAttendance.AllowUserToDeleteRows = false;
+            dataGridViewMarkAttendance.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewMarkAttendance.BackgroundColor = Color.White;
+            dataGridViewMarkAttendance.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            dataGridViewMarkAttendance.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewMarkAttendance.Location = new Point(-1, 173);
+            dataGridViewMarkAttendance.Name = "dataGridViewMarkAttendance";
+            dataGridViewMarkAttendance.ScrollBars = ScrollBars.Vertical;
+            dataGridViewMarkAttendance.Size = new Size(935, 150);
+            dataGridViewMarkAttendance.TabIndex = 12;
             // 
             // comboBoxClass
             // 
@@ -146,7 +110,6 @@ namespace Attendance_Management_System.Forms
             comboBoxClass.Name = "comboBoxClass";
             comboBoxClass.Size = new Size(270, 23);
             comboBoxClass.TabIndex = 9;
-            comboBoxClass.SelectedIndexChanged += comboBoxClass_SelectedIndexChanged_1;
             // 
             // label3
             // 
@@ -165,7 +128,6 @@ namespace Attendance_Management_System.Forms
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(270, 23);
             dateTimePicker1.TabIndex = 0;
-            dateTimePicker1.ValueChanged += dateTimePicker1_ValueChanged;
             // 
             // panel6
             // 
@@ -173,35 +135,6 @@ namespace Attendance_Management_System.Forms
             panel6.Name = "panel6";
             panel6.Size = new Size(10, 23);
             panel6.TabIndex = 6;
-            // 
-            // panel5
-            // 
-            panel5.Location = new Point(389, 73);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(10, 23);
-            panel5.TabIndex = 0;
-            // 
-            // panel4
-            // 
-            panel4.Location = new Point(111, 73);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(10, 23);
-            panel4.TabIndex = 0;
-            // 
-            // panel3
-            // 
-            panel3.Location = new Point(120, 95);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(270, 10);
-            panel3.TabIndex = 0;
-            // 
-            // panel2
-            // 
-            panel2.Location = new Point(120, 63);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(270, 10);
-            panel2.TabIndex = 0;
-            panel2.Paint += panel2_Paint;
             // 
             // label2
             // 
@@ -239,11 +172,12 @@ namespace Attendance_Management_System.Forms
             Controls.Add(panel1);
             Name = "UserControlMarkAttendance";
             Size = new Size(1027, 526);
+            Load += UserControlMarkAttendance_Load;
             panel1.ResumeLayout(false);
             tabControl1.ResumeLayout(false);
             tabPageMarkAttendence.ResumeLayout(false);
             tabPageMarkAttendence.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridViewMarkAttendence).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewMarkAttendance).EndInit();
             ResumeLayout(false);
         }
 
@@ -254,20 +188,12 @@ namespace Attendance_Management_System.Forms
         private TabPage tabPageMarkAttendence;
         private Label label1;
         private Label label2;
-        private Panel panel2;
-        private Panel panel3;
-        private Panel panel5;
-        private Panel panel4;
         private Panel panel6;
         private DateTimePicker dateTimePicker1;
         private Label label3;
         private ComboBox comboBoxClass;
-        private DataGridView dataGridViewMarkAttendence;
-        private DataGridViewTextBoxColumn Column1;
-        private DataGridViewTextBoxColumn Column2;
-        private DataGridViewCheckBoxColumn Column3;
-        private DataGridViewTextBoxColumn Column4;
         private EventHandler comboBoxClass_SelectedIndexChanged;
         private TabPage tabPage1;
+        private DataGridView dataGridViewMarkAttendance;
     }
 }
