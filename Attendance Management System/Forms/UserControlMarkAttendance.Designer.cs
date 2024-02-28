@@ -40,6 +40,7 @@ namespace Attendance_Management_System.Forms
             label2 = new Label();
             label1 = new Label();
             tabPage1 = new TabPage();
+            btnSave = new Button();
             panel1.SuspendLayout();
             tabControl1.SuspendLayout();
             tabPageMarkAttendence.SuspendLayout();
@@ -71,6 +72,7 @@ namespace Attendance_Management_System.Forms
             // 
             // tabPageMarkAttendence
             // 
+            tabPageMarkAttendence.Controls.Add(btnSave);
             tabPageMarkAttendence.Controls.Add(dataGridViewMarkAttendance);
             tabPageMarkAttendence.Controls.Add(comboBoxClass);
             tabPageMarkAttendence.Controls.Add(label3);
@@ -85,8 +87,7 @@ namespace Attendance_Management_System.Forms
             tabPageMarkAttendence.TabIndex = 0;
             tabPageMarkAttendence.Text = "Mark Attendence";
             tabPageMarkAttendence.UseVisualStyleBackColor = true;
-            tabPageMarkAttendence.Click += tabPageMarkAttendence_Click;
-            // 
+            
             // dataGridViewMarkAttendance
             // 
             dataGridViewMarkAttendance.AllowUserToAddRows = false;
@@ -164,6 +165,16 @@ namespace Attendance_Management_System.Forms
             tabPage1.Text = "tabPage1";
             tabPage1.UseVisualStyleBackColor = true;
             // 
+            // btnSave
+            // 
+            btnSave.Location = new Point(744, 411);
+            btnSave.Name = "btnSave";
+            btnSave.Size = new Size(75, 23);
+            btnSave.TabIndex = 13;
+            btnSave.Text = "Save";
+            btnSave.UseVisualStyleBackColor = true;
+            btnSave.Click += btnSave_Click_1;
+            // 
             // UserControlMarkAttendance
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -195,5 +206,6 @@ namespace Attendance_Management_System.Forms
         private EventHandler comboBoxClass_SelectedIndexChanged;
         private TabPage tabPage1;
         private DataGridView dataGridViewMarkAttendance;
+        private Button btnSave;
     }
 }

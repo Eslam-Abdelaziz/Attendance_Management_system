@@ -13,16 +13,13 @@ namespace Attendance_Management_System.Forms
 {
     public partial class UserControlMarkAttendance : UserControl
     {
-        // private string sql;
-        // private bool okay;
+
         private DataTable studentsTable;
         private string xmlFilePath = "C:\\Users\\nada elhabshy\\source\\repos\\Attendance_Management_system\\Attendance Management System\\Data\\attendance.xml";
 
         public UserControlMarkAttendance()
         {
             InitializeComponent();
-            // dataGridViewMarkAttendence.Columns["column1"].Visible = false;
-            // dataGridViewMarkAttendence.Columns["column5"].Visible = false;
 
         }
         private void UserControlMarkAttendance_Load(object sender, EventArgs e)
@@ -30,20 +27,20 @@ namespace Attendance_Management_System.Forms
 
 
             // Load student data from XML file
-          //  InitializeDataGridView();
+
             LoadStudentsFromXml();
-         //   RemoveEmptyColumns();
-            
-           
+
+
+
         }
 
 
-     
+
         private void LoadStudentsFromXml()
         {
             // Load student data from XML file
             studentsTable = new DataTable();
-            
+
             studentsTable.Columns.Add("ID");
             studentsTable.Columns.Add("Name");
             studentsTable.Columns.Add("Class");
@@ -73,9 +70,16 @@ namespace Attendance_Management_System.Forms
             // Bind data to DataGridView
             dataGridViewMarkAttendance.DataSource = studentsTable;
         }
-      
-        
+
+
         private void btnSave_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+
+        
+        private void btnSave_Click_1(object sender, EventArgs e)
         {
             // Get selected date from DateTimePicker
             DateTime selectedDate = dateTimePicker1.Value.Date;
@@ -96,17 +100,6 @@ namespace Attendance_Management_System.Forms
             );
             doc.Save(xmlFilePath);
             MessageBox.Show("Attendance saved successfully.");
-        }
-     
-
-    private void tabPageMarkAttendence_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridViewMarkAttendence_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
     }
 }
