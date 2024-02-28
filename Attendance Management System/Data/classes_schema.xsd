@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+
+    <xs:simpleType name="NameType">
+        <xs:restriction base="xs:string">
+            <xs:minLength value="3"/>
+            <xs:pattern value="[A-Za-z ]+"/>
+        </xs:restriction>
+    </xs:simpleType>
+	
+	<xs:element name="Name" type="NameType"/>
+    <xs:element name="ID" type="xs:integer"/>
+	<xs:element name="Teacher" type="xs:string"/>
+	
+	<xs:group name="classGroup">
+        <xs:sequence>
+			<xs:element ref="ID"/>
+            <xs:element ref="Name"/>
+            <xs:element ref="Teacher" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:group>
+	
+	 <xs:complexType name="ClassComplex">
+        <xs:group ref="classGroup"/>
+    </xs:complexType>
+	
+	<xs:element name="Class" type="ClassComplex"/>
+	
+	<xs:complexType name="AllComplex">
+        <xs:sequence>
+            <xs:element ref="Class" minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+	
+	<xs:element name="Classes" type="AllComplex"/>
+</xs:schema>

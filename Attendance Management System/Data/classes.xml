@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Classes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="classes_shcema.xsd">
+  <Class>
+    <ID>1</ID>
+    <Name>Maths</Name>
+    <Teacher>Teacher</Teacher>
+  </Class>
+  <Class>
+    <ID>2</ID>
+    <Name>Science</Name>
+    <Teacher>Smith</Teacher>
+  </Class>
+  <Class>
+    <ID>3</ID>
+    <Name>English</Name>
+    <Teacher>Smith</Teacher>
+  </Class>
+  <Class>
+    <ID>4</ID>
+    <Name>Arts</Name>
+    <Teacher>Sara Johnson</Teacher>
+  </Class>
+  <Class>
+    <ID>6</ID>
+    <Name>Software</Name>
+    <Teacher>Smith</Teacher>
+  </Class>
+  <Class>
+    <ID>8</ID>
+    <Name>Databases</Name>
+    <Teacher>Sarah Johnson</Teacher>
+  </Class>
+</Classes>

@@ -106,7 +106,6 @@
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Please Login First";
-            groupBox1.Enter += groupBox1_Enter;
             // 
             // labelFP
             // 
@@ -119,7 +118,7 @@
             labelFP.Size = new Size(135, 18);
             labelFP.TabIndex = 7;
             labelFP.Text = "Forget password?";
-            labelFP.Click += label3_Click;
+            labelFP.Click += labeFP_Click;
             // 
             // labelError
             // 
@@ -132,7 +131,6 @@
             labelError.TabIndex = 6;
             labelError.Text = "Invalid Username or Password";
             labelError.Visible = false;
-            labelError.Click += labelError_Click;
             // 
             // pictureBoxError
             // 
@@ -183,7 +181,6 @@
             label1.Size = new Size(86, 18);
             label1.TabIndex = 0;
             label1.Text = "Username:";
-            label1.Click += label1_Click;
             // 
             // panel2
             // 
@@ -201,7 +198,6 @@
             textBoxName.Name = "textBoxName";
             textBoxName.Size = new Size(317, 20);
             textBoxName.TabIndex = 1;
-            textBoxName.TextChanged += textBoxName_TextChanged;
             textBoxName.KeyPress += textBoxName_KeyPress;
             textBoxName.KeyUp += textBoxName_KeyUp;
             // 
@@ -265,7 +261,6 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(8, 600);
             panel1.TabIndex = 0;
-            panel1.Paint += panel1_Paint;
             // 
             // pictureBox1
             // 
@@ -287,7 +282,6 @@
             label3.Size = new Size(311, 27);
             label3.TabIndex = 10;
             label3.Text = "Attendance Management ";
-            label3.Click += label3_Click_1;
             // 
             // label4
             // 
@@ -299,7 +293,6 @@
             label4.Size = new Size(91, 27);
             label4.TabIndex = 11;
             label4.Text = "System";
-            label4.Click += label4_Click;
             // 
             // label5
             // 
@@ -322,7 +315,6 @@
             label6.Size = new Size(252, 22);
             label6.TabIndex = 10;
             label6.Text = "Designed BY Dev_Dynamos";
-            label6.Click += label6_Click;
             // 
             // label7
             // 

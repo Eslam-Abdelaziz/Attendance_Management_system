@@ -1,60 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
+﻿using Attendance_Management_System.Classes;
 namespace Attendance_Management_System.Forms
 {
     public partial class Login : Form
     {
-        public Login()
+        public Login(Person person)
         {
             InitializeComponent();
-        }
-
-        private void textBoxName_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label3_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void pictureBoxClose_click(object sender, EventArgs e)
@@ -65,11 +16,6 @@ namespace Attendance_Management_System.Forms
         private void pictureBoxMinimize_click(object sender, EventArgs e)
         {
             WindowState = FormWindowState.Minimized;
-        }
-
-        private void labelError_Click(object sender, EventArgs e)
-        {
-
         }
 
 
@@ -119,25 +65,22 @@ namespace Attendance_Management_System.Forms
         {
             string username = textBoxName.Text.Trim();
             string pass = textBoxPassword.Text.Trim();
-            if (username != string.Empty && pass != string.Empty)
+            if (username != string.Empty && pass != string.Empty && UserValidation.IsValidNamePass(username,pass) != null)
             {
-                ////string role = isValidNamePass(username, pass);
-                //if (role != string.Empty)
-                //{
-                //    //MainForm mainForm = new MainForm();
-                //    textBoxName.Clear();
-                //    textBoxPassword.Clear();
-                //    pictureBoxHide_click(sender, e);
-                //    textBoxName.Focus();
-                //    pictureBoxError.Hide();
-                //    labelError.Hide();
-                //    //mainForm.ShowDialog();
-                //}
-                //else
-                //{
-                //    pictureBoxError.Show();
-                //    labelError.Show();
-                //}
+                textBoxName.Clear();
+                textBoxPassword.Clear();
+                pictureBoxHide_click(sender, e);
+                textBoxName.Focus();
+                pictureBoxError.Hide();
+                labelError.Hide();
+                Close();
+                //MainForm mainForm = new MainForm();
+                //mainForm.ShowDialog();
+            }
+            else
+            {
+                pictureBoxError.Show();
+                labelError.Show();
             }
 
         }
@@ -145,22 +88,22 @@ namespace Attendance_Management_System.Forms
         #region handling Enter key
         private void textBoxName_KeyUp(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.Enter)
+            if (e.KeyCode == Keys.Enter)
                 e.SuppressKeyPress = true;
         }
 
         private void textBoxName_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if(e.KeyChar == (char)Keys.Enter)
+            if (e.KeyChar == (char)Keys.Enter)
             {
-                SelectNextControl(ActiveControl,true,true,true,true);
+                SelectNextControl(ActiveControl, true, true, true, true);
                 e.Handled = true;
             }
         }
 
         private void textBoxPassword_KeyUp(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.Enter)
+            if (e.KeyCode == Keys.Enter)
                 e.SuppressKeyPress = true;
 
         }
@@ -175,5 +118,18 @@ namespace Attendance_Management_System.Forms
 
         }
         #endregion
+
+        private void labeFP_Click(object sender, EventArgs e)
+        {
+            Person currentUser = new Person("tempName", -1, "tempName", "tempName");
+            Forgot_Password forgot_Password = new Forgot_Password(currentUser);
+            forgot_Password.ShowDialog();
+            textBoxName.Clear();
+            textBoxPassword.Clear();
+            pictureBoxHide_click(sender, e);
+            textBoxName.Focus();
+            pictureBoxError.Hide();
+            labelError.Hide();
+        }
     }
 }
