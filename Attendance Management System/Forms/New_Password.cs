@@ -72,7 +72,7 @@ namespace Attendance_Management_System.Forms
                     textBoxNewPassword.Focus();
                     labelError.Hide();
                     Close();
-                    UserValidation.UpdatePassword(newPass);
+                    // UserValidation.UpdatePassword(newPass);
                 }
                 else
                 {

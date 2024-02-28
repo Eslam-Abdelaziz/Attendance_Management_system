@@ -29,6 +29,9 @@ namespace Attendance_Management_System.Forms
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             panel1 = new Panel();
             tabControl1 = new TabControl();
             tabPageMarkAttendence = new TabPage();
@@ -40,11 +43,16 @@ namespace Attendance_Management_System.Forms
             label2 = new Label();
             label1 = new Label();
             tabPage1 = new TabPage();
-            btnSave = new Button();
+            dataGridViewStudent = new DataGridView();
+            Column1 = new DataGridViewTextBoxColumn();
+            Column2 = new DataGridViewTextBoxColumn();
+            Column3 = new DataGridViewTextBoxColumn();
+            Date = new DataGridViewTextBoxColumn();
             panel1.SuspendLayout();
             tabControl1.SuspendLayout();
             tabPageMarkAttendence.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewMarkAttendance).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewStudent).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -52,7 +60,7 @@ namespace Attendance_Management_System.Forms
             panel1.Anchor = AnchorStyles.None;
             panel1.BackColor = Color.White;
             panel1.Controls.Add(tabControl1);
-            panel1.Location = new Point(42, 16);
+            panel1.Location = new Point(81, 72);
             panel1.Name = "panel1";
             panel1.Size = new Size(942, 501);
             panel1.TabIndex = 0;
@@ -72,7 +80,7 @@ namespace Attendance_Management_System.Forms
             // 
             // tabPageMarkAttendence
             // 
-            tabPageMarkAttendence.Controls.Add(btnSave);
+            tabPageMarkAttendence.Controls.Add(dataGridViewStudent);
             tabPageMarkAttendence.Controls.Add(dataGridViewMarkAttendance);
             tabPageMarkAttendence.Controls.Add(comboBoxClass);
             tabPageMarkAttendence.Controls.Add(label3);
@@ -87,7 +95,7 @@ namespace Attendance_Management_System.Forms
             tabPageMarkAttendence.TabIndex = 0;
             tabPageMarkAttendence.Text = "Mark Attendence";
             tabPageMarkAttendence.UseVisualStyleBackColor = true;
-            
+            // 
             // dataGridViewMarkAttendance
             // 
             dataGridViewMarkAttendance.AllowUserToAddRows = false;
@@ -165,15 +173,65 @@ namespace Attendance_Management_System.Forms
             tabPage1.Text = "tabPage1";
             tabPage1.UseVisualStyleBackColor = true;
             // 
-            // btnSave
+            // dataGridViewStudent
             // 
-            btnSave.Location = new Point(744, 411);
-            btnSave.Name = "btnSave";
-            btnSave.Size = new Size(75, 23);
-            btnSave.TabIndex = 13;
-            btnSave.Text = "Save";
-            btnSave.UseVisualStyleBackColor = true;
-            btnSave.Click += btnSave_Click_1;
+            dataGridViewStudent.AllowUserToAddRows = false;
+            dataGridViewStudent.AllowUserToDeleteRows = false;
+            dataGridViewStudent.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewStudent.BackgroundColor = Color.White;
+            dataGridViewStudent.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Control;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dataGridViewStudent.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewStudent.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewStudent.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Date });
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dataGridViewStudent.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewStudent.Location = new Point(-4, 173);
+            dataGridViewStudent.Name = "dataGridViewStudent";
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = SystemColors.Control;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            dataGridViewStudent.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewStudent.ScrollBars = ScrollBars.Vertical;
+            dataGridViewStudent.Size = new Size(942, 300);
+            dataGridViewStudent.TabIndex = 14;
+            // 
+            // Column1
+            // 
+            Column1.HeaderText = "ID";
+            Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            Column2.HeaderText = "Student Name";
+            Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            Column3.HeaderText = "Status";
+            Column3.Name = "Column3";
+            Column3.Resizable = DataGridViewTriState.True;
+            // 
+            // Date
+            // 
+            Date.HeaderText = "Date";
+            Date.Name = "Date";
             // 
             // UserControlMarkAttendance
             // 
@@ -182,13 +240,14 @@ namespace Attendance_Management_System.Forms
             BackColor = Color.White;
             Controls.Add(panel1);
             Name = "UserControlMarkAttendance";
-            Size = new Size(1027, 526);
+            Size = new Size(1105, 639);
             Load += UserControlMarkAttendance_Load;
             panel1.ResumeLayout(false);
             tabControl1.ResumeLayout(false);
             tabPageMarkAttendence.ResumeLayout(false);
             tabPageMarkAttendence.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewMarkAttendance).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewStudent).EndInit();
             ResumeLayout(false);
         }
 
@@ -206,6 +265,10 @@ namespace Attendance_Management_System.Forms
         private EventHandler comboBoxClass_SelectedIndexChanged;
         private TabPage tabPage1;
         private DataGridView dataGridViewMarkAttendance;
-        private Button btnSave;
+        private DataGridView dataGridViewStudent;
+        private DataGridViewTextBoxColumn Column1;
+        private DataGridViewTextBoxColumn Column2;
+        private DataGridViewTextBoxColumn Column3;
+        private DataGridViewTextBoxColumn Date;
     }
 }

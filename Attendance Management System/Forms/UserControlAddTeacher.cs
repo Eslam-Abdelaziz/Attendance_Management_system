@@ -17,10 +17,12 @@ namespace Attendance_Management_System.Forms
     public partial class UserControlAddTeacher : UserControl
     {
         private XDocument teachersDocument;
-        private string teachersFilePath = @"C:\Iti\C#XML\Attendance_Management_system\Attendance Management System\Data\users.xml";
-        private string schemaFilePath = @"C:\Iti\C#XML\Attendance_Management_system\Attendance Management System\Data\users_schema.xsd";
-        private string classesFilePath = @"C:\Iti\C#XML\Attendance_Management_system\Attendance Management System\Data\classes.xml";
-
+        //private string teachersFilePath = @"C:\Iti\C#XML\Attendance_Management_system\Attendance Management System\Data\users.xml";
+        //private string schemaFilePath = @"C:\Iti\C#XML\Attendance_Management_system\Attendance Management System\Data\users_schema.xsd";
+        //private string classesFilePath = @"C:\Iti\C#XML\Attendance_Management_system\Attendance Management System\Data\classes.xml";
+        private string teachersFilePath = Path.Combine(Directory.GetCurrentDirectory(), "../../../Data/users.xml");
+        private string schemaFilePath = Path.Combine(Directory.GetCurrentDirectory(), "../../../Data/users_schema.xsd");
+        private string classesFilePath = Path.Combine(Directory.GetCurrentDirectory(), "../../../Data/classes.xml");
 
         public UserControlAddTeacher()
         {

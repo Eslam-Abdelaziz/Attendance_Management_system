@@ -16,9 +16,12 @@ namespace Attendance_Management_System.Forms
     public partial class UserControlAddClass : UserControl
     {
         private XDocument classesDocument;
-        private string classesFilePath = @"C:\Iti\C#XML\Attendance_Management_system\Attendance Management System\Data\classes.xml";
-        private string usersFilePath = @"C:\Iti\C#XML\Attendance_Management_system\Attendance Management System\Data\users.xml";
-        private string schemaFilePath = @"C:\Iti\C#XML\Attendance_Management_system\Attendance Management System\Data\classes_schema.xsd";
+        //private string classesFilePath = @"C:\Iti\C#XML\Attendance_Management_system\Attendance Management System\Data\classes.xml";
+        //private string usersFilePath = @"C:\Iti\C#XML\Attendance_Management_system\Attendance Management System\Data\users.xml";
+        //private string schemaFilePath = @"C:\Iti\C#XML\Attendance_Management_system\Attendance Management System\Data\classes_schema.xsd";
+        private string usersFilePath = Path.Combine(Directory.GetCurrentDirectory(), "../../../Data/users.xml");
+        private string schemaFilePath = Path.Combine(Directory.GetCurrentDirectory(), "../../../Data/users_schema.xsd");
+        private string classesFilePath = Path.Combine(Directory.GetCurrentDirectory(), "../../../Data/classes.xml");
         public UserControlAddClass()
         {
             InitializeComponent();
