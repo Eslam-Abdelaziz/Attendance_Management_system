@@ -24,17 +24,18 @@ namespace Attendance_Management_System.Classes
         public static string IsValidNamePass(string username, string password)
         {
             XmlDocument xmlDoc = new XmlDocument();
-            string XmlFilePath = Path.Combine(Directory.GetCurrentDirectory(), "../../../Data/users.xml");
+            string XmlFilePath = Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory(), @"../../../Data/users.xml"));
+            Console.WriteLine(XmlFilePath);
             xmlDoc.Load(XmlFilePath); 
             XmlNodeList userList = xmlDoc.SelectNodes("//Users/*");
 
             foreach (XmlNode userNode in userList)
             {
-                string name = userNode.SelectSingleNode("Name").InnerText;
+                string email = userNode.SelectSingleNode("Email").InnerText;
                 string storedPassword = userNode.SelectSingleNode("Password").InnerText;
                 string role = userNode.Name;
 
-                if (username.Equals(name, StringComparison.OrdinalIgnoreCase) && password.Equals(storedPassword))
+                if (username.Equals(email, StringComparison.OrdinalIgnoreCase) && password.Equals(storedPassword))
                 {
                     return role;
                 }
