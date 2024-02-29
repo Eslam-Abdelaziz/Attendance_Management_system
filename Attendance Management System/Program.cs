@@ -17,7 +17,7 @@ namespace Attendance_Management_System.Forms
             ApplicationConfiguration.Initialize();
             Person currentUser = new Person("tempName", -1, "tempName", "tempName");
             //  Application.Run(new Login(currentUser));
-            Application.Run(new attendanceTEST());
+            Application.Run(new test());
         }
     }
 }
