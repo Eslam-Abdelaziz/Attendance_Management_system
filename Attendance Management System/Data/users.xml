@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Users xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="users_schema.xsd">
   <Admin>
     <Name>Admin User</Name>
@@ -72,11 +72,18 @@
     <Password>098Ajdmm3</Password>
     <Class>English</Class>
   </Student>
-  <Teacher>
+  <Student>
     <Name>Teache</Name>
     <ID>110</ID>
     <Email>Maxon@gmail.com</Email>
     <Password>12083Klass</Password>
     <Class>Maths</Class>
   </Teacher>
+  <Student>
+    <Name>Eslam</Name>
+    <ID>15</ID>
+    <Email>Eslam@iti.com</Email>
+    <Password>ameslam123</Password>
+    <Class>Maths</Class>
+  </Student>
 </Users>

@@ -14,13 +14,18 @@ namespace Attendance_Management_System.Forms
 
         }
         public string name { get;  set; }
-        public int id { get;  set; }
+        public string id { get;  set; }
       //  public string date { get;  set; }
      //   public string status { get;  set; }
-        public int Class { get;  set; }
-      //  public int record { get;  set; }
+        public string Class { get;  set; }
+        //  public int record { get;  set; }
 
-
+        public Attendance(string name, string id, string Class)
+        {
+            this .name = name;
+            this .id = id;
+            this.Class = Class;
+        }
 
 
         public static bool  IsMarkAttendance(string date, string className)

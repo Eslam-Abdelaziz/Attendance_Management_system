@@ -1,33 +1,110 @@
-<attendance  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:noNamespaceSchemaLocation="att_schema.xsd">
-    <class id="1">
-        <record>
-            <id>1</id>
-            <name>John Doe</name>
-            <date>2024-02-16</date>
-            <status>present</status>
-        </record>
-        <record>
-            <id>2</id>
-            <name>Jane Smith</name>
-            <date>2024-02-16</date>
-            <status>absent</status>
-        </record>
-    </class>
-    <class id="2">
-        <record>
-            <id>3</id>
-            <name>Alice Johnson</name>
-            <date>2024-02-16</date>
-            <status>present</status>
-        </record>
-        <record>
-            <id>4</id>
-            <name>Bob Brown</name>
-            <date>2024-02-16</date>
-            <status>present</status>
-        </record>
-    </class>
-	<class id="3">
-	</class>
+<attendance xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="att_schema.xsd">
+  <class id="1">
+    <record>
+      <id>1</id>
+      <name>John Doe</name>
+      <date>2024-02-16</date>
+      <status>present</status>
+    </record>
+    <record>
+      <id>2</id>
+      <name>Jane Smith</name>
+      <date>2024-02-16</date>
+      <status>absent</status>
+    </record>
+  </class>
+  <class id="2">
+    <record>
+      <id>3</id>
+      <name>Alice Johnson</name>
+      <date>2024-02-16</date>
+      <status>present</status>
+    </record>
+    <record>
+      <id>4</id>
+      <name>Bob Brown</name>
+      <date>2024-02-16</date>
+      <status>present</status>
+    </record>
+    <record>
+      <id>103</id>
+      <name>New Student</name>
+      <date>2024-02-29</date>
+      <status>absent</status>
+    </record>
+    <record>
+      <id>12</id>
+      <name>Ahmed</name>
+      <date>2024-02-29</date>
+      <status>absent</status>
+    </record>
+    <record>
+      <id>99</id>
+      <name>King</name>
+      <date>2024-02-29</date>
+      <status>present</status>
+    </record>
+    <record>
+      <id>103</id>
+      <name>New Student</name>
+      <date>2024-02-29</date>
+      <status>absent</status>
+    </record>
+    <record>
+      <id>12</id>
+      <name>Ahmed</name>
+      <date>2024-02-29</date>
+      <status>present</status>
+    </record>
+    <record>
+      <id>99</id>
+      <name>King</name>
+      <date>2024-02-29</date>
+      <status>present</status>
+    </record>
+    <record>
+      <id>99</id>
+      <name>King</name>
+      <date>2024-02-29</date>
+      <status>present</status>
+    </record>
+  </class>
+  <class id="3">
+    <record>
+      <id>103</id>
+      <name>New Student</name>
+      <date>2024-02-29</date>
+      <status>present</status>
+    </record>
+    <record>
+      <id>12</id>
+      <name>Ahmed</name>
+      <date>2024-02-29</date>
+      <status>absent</status>
+    </record>
+    <record>
+      <id>99</id>
+      <name>King</name>
+      <date>2024-02-29</date>
+      <status>absent</status>
+    </record>
+    <record>
+      <id>102</id>
+      <name>Michael Brown</name>
+      <date>2024-02-29</date>
+      <status>present</status>
+    </record>
+    <record>
+      <id>104</id>
+      <name>Ahmed</name>
+      <date>2024-02-29</date>
+      <status>present</status>
+    </record>
+    <record>
+      <id>120</id>
+      <name>khaled</name>
+      <date>2024-02-29</date>
+      <status>absent</status>
+    </record>
+  </class>
 </attendance>

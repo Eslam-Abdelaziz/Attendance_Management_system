@@ -68,7 +68,7 @@ namespace Attendance_Management_System.Forms
             string pass = textBoxPassword.Text.Trim();
             if (username != string.Empty && pass != string.Empty && UserValidation.IsValidNamePass(username,pass) != null)
             {
-                FormMain mainForm = new FormMain();
+                FormMain mainForm = new FormMain(username);
                 textBoxName.Clear();
                 textBoxPassword.Clear();
                 pictureBoxHide_click(sender, e);

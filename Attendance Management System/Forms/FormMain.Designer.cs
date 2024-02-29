@@ -1,6 +1,6 @@
 ﻿namespace Attendance_Management_system
 {
-    partial class FormMain
+    public partial class FormMain
     {
         /// <summary>
         ///  Required designer variable.
@@ -52,6 +52,7 @@
             pictureBox2 = new PictureBox();
             labelTime = new Label();
             panelTop = new Panel();
+            userControlMarkAttendance1 = new Attendance_Management_System.Forms.UserControlMarkAttendance();
             labelRole = new Label();
             label7 = new Label();
             labelUsername = new Label();
@@ -99,7 +100,7 @@
             buttonRegister.Name = "buttonRegister";
             buttonRegister.Size = new Size(250, 47);
             buttonRegister.TabIndex = 0;
-            buttonRegister.Text = "Register";
+            buttonRegister.Text = "Attendance";
             buttonRegister.UseVisualStyleBackColor = true;
             buttonRegister.Click += buttonRegister_Click;
             // 
@@ -205,7 +206,7 @@
             // 
             label2.AutoSize = true;
             label2.ForeColor = Color.White;
-            label2.Location = new Point(97, 125);
+            label2.Location = new Point(81, 142);
             label2.Name = "label2";
             label2.Size = new Size(79, 23);
             label2.TabIndex = 2;
@@ -215,7 +216,7 @@
             // 
             label1.AutoSize = true;
             label1.ForeColor = Color.White;
-            label1.Location = new Point(23, 106);
+            label1.Location = new Point(0, 103);
             label1.Name = "label1";
             label1.Size = new Size(264, 23);
             label1.TabIndex = 1;
@@ -337,6 +338,7 @@
             // panelTop
             // 
             panelTop.BackColor = Color.FromArgb(67, 3, 125);
+            panelTop.Controls.Add(userControlMarkAttendance1);
             panelTop.Controls.Add(labelRole);
             panelTop.Controls.Add(label7);
             panelTop.Controls.Add(labelUsername);
@@ -346,6 +348,16 @@
             panelTop.Name = "panelTop";
             panelTop.Size = new Size(926, 100);
             panelTop.TabIndex = 0;
+            // 
+            // userControlMarkAttendance1
+            // 
+            userControlMarkAttendance1.BackColor = Color.White;
+            userControlMarkAttendance1.Location = new Point(94, 80);
+            userControlMarkAttendance1.Margin = new Padding(3, 4, 3, 4);
+            userControlMarkAttendance1.Name = "userControlMarkAttendance1";
+            userControlMarkAttendance1.Size = new Size(1579, 1065);
+            userControlMarkAttendance1.TabIndex = 8;
+            userControlMarkAttendance1.Visible = false;
             // 
             // labelRole
             // 
@@ -451,6 +463,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Attendance Management System";
             WindowState = FormWindowState.Maximized;
+            Load += FormMain_Load;
             panel1.ResumeLayout(false);
             panel4.ResumeLayout(false);
             panel2.ResumeLayout(false);
@@ -499,5 +512,6 @@
         private Attendance_Management_System.Forms.UserControlAddClass userControlAddClass1;
         private Attendance_Management_System.Forms.UserControlAddTeacher userControlAddTeacher1;
         private Attendance_Management_System.Forms.UserControlAddStudent userControlAddStudent1;
+        private Attendance_Management_System.Forms.UserControlMarkAttendance userControlMarkAttendance1;
     }
 }
