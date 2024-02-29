@@ -189,20 +189,12 @@ namespace Attendance_Management_System.Forms
             // 
             // tabPage1
             // 
-            tabPage1.Controls.Add(dataGridView1);
-            tabPage1.Controls.Add(dataGridView2);
-            tabPage1.Controls.Add(comboBox1);
-            tabPage1.Controls.Add(label4);
-            tabPage1.Controls.Add(dateTimePicker2);
-            tabPage1.Controls.Add(panel2);
-            tabPage1.Controls.Add(label5);
-            tabPage1.Controls.Add(label6);
             tabPage1.Location = new Point(4, 4);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(1010, 561);
+            tabPage1.Size = new Size(934, 473);
             tabPage1.TabIndex = 1;
-            tabPage1.Text = "Mark Attendence";
+            tabPage1.Text = "tabPage1";
             tabPage1.UseVisualStyleBackColor = true;
             // 
             // UserControlMarkAttendance
@@ -210,7 +202,7 @@ namespace Attendance_Management_System.Forms
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            Controls.Add(tabControl2);
+            Controls.Add(panel1);
             Name = "UserControlMarkAttendance";
             Size = new Size(1027, 526);
             Load += UserControlMarkAttendance_Load;
