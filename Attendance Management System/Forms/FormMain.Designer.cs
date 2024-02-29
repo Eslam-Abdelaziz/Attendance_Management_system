@@ -1,6 +1,6 @@
 ﻿namespace Attendance_Management_system
 {
-    partial class FormMain
+    public partial class FormMain
     {
         /// <summary>
         ///  Required designer variable.
@@ -52,6 +52,7 @@
             pictureBox2 = new PictureBox();
             labelTime = new Label();
             panelTop = new Panel();
+            userControlMarkAttendance1 = new Attendance_Management_System.Forms.UserControlMarkAttendance();
             labelRole = new Label();
             label7 = new Label();
             labelUsername = new Label();
@@ -337,6 +338,7 @@
             // panelTop
             // 
             panelTop.BackColor = Color.FromArgb(67, 3, 125);
+            panelTop.Controls.Add(userControlMarkAttendance1);
             panelTop.Controls.Add(labelRole);
             panelTop.Controls.Add(label7);
             panelTop.Controls.Add(labelUsername);
@@ -346,6 +348,16 @@
             panelTop.Name = "panelTop";
             panelTop.Size = new Size(926, 100);
             panelTop.TabIndex = 0;
+            // 
+            // userControlMarkAttendance1
+            // 
+            userControlMarkAttendance1.BackColor = Color.White;
+            userControlMarkAttendance1.Location = new Point(94, 80);
+            userControlMarkAttendance1.Margin = new Padding(3, 4, 3, 4);
+            userControlMarkAttendance1.Name = "userControlMarkAttendance1";
+            userControlMarkAttendance1.Size = new Size(1579, 1065);
+            userControlMarkAttendance1.TabIndex = 8;
+            userControlMarkAttendance1.Visible = false;
             // 
             // labelRole
             // 
@@ -500,5 +512,6 @@
         private Attendance_Management_System.Forms.UserControlAddClass userControlAddClass1;
         private Attendance_Management_System.Forms.UserControlAddTeacher userControlAddTeacher1;
         private Attendance_Management_System.Forms.UserControlAddStudent userControlAddStudent1;
+        private Attendance_Management_System.Forms.UserControlMarkAttendance userControlMarkAttendance1;
     }
 }

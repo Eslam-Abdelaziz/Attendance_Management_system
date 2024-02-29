@@ -44,7 +44,10 @@ namespace Attendance_Management_system
                 buttonAddTeacher.Hide();
                 buttonDashboard.Hide();
             }
-            else;
+            else
+            {
+                buttonRegister.Hide();
+            }
         }
 
         private void buttonMinimize_Click(object sender, EventArgs e)
