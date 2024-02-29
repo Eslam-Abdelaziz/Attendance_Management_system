@@ -1,14 +1,16 @@
 using Attendance_Management_System.Forms;
 using System;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 
 namespace Attendance_Management_system
 {
     public partial class FormMain : Form
     {
-        private string Username = "Admin";
-        private string Role = "Admin";
+        private string Username;
+        private string Role;
+        private string usersFilePath = Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory(), "../../../Data/users.xml"));
         private void buttonLogOut_Click(object sender, EventArgs e)
         {
             DialogResult dialogResult = MessageBox.Show("Do you want to Log Out?", "Log Out", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -25,8 +27,23 @@ namespace Attendance_Management_system
         {
             panelExpand.Hide();
             panelExpand.Visible = false;
-                 labelUsername.Text = Username;
-                 labelRole.Text = Role;
+            labelUsername.Text = Username;
+            labelRole.Text = Role;
+            if (Role == "Student")
+            {
+                buttonAddClass.Hide();
+                buttonAddStudent.Hide();
+                buttonAddTeacher.Hide();
+                buttonDashboard.Hide();
+            }
+            else if (Role == "Teacher")
+            {
+                buttonAddClass.Hide();
+                buttonAddStudent.Hide();
+                buttonAddTeacher.Hide();
+                buttonDashboard.Hide();
+            }
+            else;
         }
 
         private void buttonMinimize_Click(object sender, EventArgs e)
@@ -41,9 +58,10 @@ namespace Attendance_Management_system
             labelTime.Text = now.ToString("F");
         }
 
-        public FormMain()
+        public FormMain(string email)
         {
             InitializeComponent();
+            SearchUser(email);
             timerDateAndTime.Start();
         }
 
@@ -119,6 +137,22 @@ namespace Attendance_Management_system
             }
         }
 
-        
+        public void SearchUser(string email)
+        {
+
+            XDocument doc = XDocument.Load(usersFilePath); // Load the XML file
+            var user = doc.Descendants("Users")
+                          .Elements() // Get all elements under Users
+                          .FirstOrDefault(e => e.Element("Email")?.Value == email); // Find the first user element with matching email
+
+            if (user != null)
+            {
+                Username = user.Element("Name")?.Value ?? ""; // Get the Name value
+                Role = user.Name.LocalName; // Get the role (Admin, Teacher, or Student)
+            }
+
+        }
+
+
     }
 }
