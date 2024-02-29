@@ -26,6 +26,7 @@ namespace Attendance_Management_system
         private void FormMain_Load(object sender, EventArgs e)
         {
             panelExpand.Hide();
+            userControlDashboard1.Count();
             panelExpand.Visible = false;
             labelUsername.Text = Username;
             labelRole.Text = Role;
