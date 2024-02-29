@@ -29,6 +29,7 @@
     <Email>emma.watson@example.com</Email>
     <Password>studentpass</Password>
     <Class>Maths</Class>
+    <Status>present</Status>
   </Student>
   <Student>
     <Name>Michael Brown</Name>
@@ -72,11 +73,12 @@
     <Password>098Ajdmm3</Password>
     <Class>English</Class>
   </Student>
-  <Teacher>
+  <Student>
     <Name>Teache</Name>
     <ID>110</ID>
     <Email>Maxon@gmail.com</Email>
     <Password>12083Klass</Password>
     <Class>Maths</Class>
-  </Teacher>
+    <Status>absent</Status>
+  </Student>
 </Users>

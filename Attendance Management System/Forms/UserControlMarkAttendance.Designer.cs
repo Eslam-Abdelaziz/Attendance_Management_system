@@ -32,7 +32,11 @@ namespace Attendance_Management_System.Forms
             panel1 = new Panel();
             tabControl1 = new TabControl();
             tabPageMarkAttendence = new TabPage();
+            btnSave = new Button();
             dataGridViewMarkAttendance = new DataGridView();
+            id = new DataGridViewTextBoxColumn();
+            name = new DataGridViewTextBoxColumn();
+            status = new DataGridViewCheckBoxColumn();
             comboBoxClass = new ComboBox();
             label3 = new Label();
             dateTimePicker1 = new DateTimePicker();
@@ -40,7 +44,6 @@ namespace Attendance_Management_System.Forms
             label2 = new Label();
             label1 = new Label();
             tabPage1 = new TabPage();
-            btnSave = new Button();
             panel1.SuspendLayout();
             tabControl1.SuspendLayout();
             tabPageMarkAttendence.SuspendLayout();
@@ -87,20 +90,48 @@ namespace Attendance_Management_System.Forms
             tabPageMarkAttendence.TabIndex = 0;
             tabPageMarkAttendence.Text = "Mark Attendence";
             tabPageMarkAttendence.UseVisualStyleBackColor = true;
-            
+            // 
+            // btnSave
+            // 
+            btnSave.Location = new Point(744, 411);
+            btnSave.Name = "btnSave";
+            btnSave.Size = new Size(75, 23);
+            btnSave.TabIndex = 13;
+            btnSave.Text = "Save";
+            btnSave.UseVisualStyleBackColor = true;
+            btnSave.Click += btnSave_Click_1;
+            // 
             // dataGridViewMarkAttendance
             // 
-            dataGridViewMarkAttendance.AllowUserToAddRows = false;
             dataGridViewMarkAttendance.AllowUserToDeleteRows = false;
             dataGridViewMarkAttendance.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewMarkAttendance.BackgroundColor = Color.White;
             dataGridViewMarkAttendance.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             dataGridViewMarkAttendance.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewMarkAttendance.Location = new Point(-1, 173);
+            dataGridViewMarkAttendance.Columns.AddRange(new DataGridViewColumn[] { id, name, status });
+            dataGridViewMarkAttendance.Location = new Point(-1, 180);
             dataGridViewMarkAttendance.Name = "dataGridViewMarkAttendance";
             dataGridViewMarkAttendance.ScrollBars = ScrollBars.Vertical;
             dataGridViewMarkAttendance.Size = new Size(935, 150);
             dataGridViewMarkAttendance.TabIndex = 12;
+            dataGridViewMarkAttendance.CellContentClick += dataGridViewMarkAttendance_CellContentClick;
+            // 
+            // id
+            // 
+            id.HeaderText = "name";
+            id.Name = "id";
+            // 
+            // name
+            // 
+            name.HeaderText = "id";
+            name.Name = "name";
+            // 
+            // status
+            // 
+            status.HeaderText = "status";
+            status.Name = "status";
+            status.Resizable = DataGridViewTriState.True;
+            status.SortMode = DataGridViewColumnSortMode.Automatic;
             // 
             // comboBoxClass
             // 
@@ -111,6 +142,7 @@ namespace Attendance_Management_System.Forms
             comboBoxClass.Name = "comboBoxClass";
             comboBoxClass.Size = new Size(270, 23);
             comboBoxClass.TabIndex = 9;
+            comboBoxClass.SelectedIndexChanged += comboBoxClass_SelectedIndexChanged_1;
             // 
             // label3
             // 
@@ -165,16 +197,6 @@ namespace Attendance_Management_System.Forms
             tabPage1.Text = "tabPage1";
             tabPage1.UseVisualStyleBackColor = true;
             // 
-            // btnSave
-            // 
-            btnSave.Location = new Point(744, 411);
-            btnSave.Name = "btnSave";
-            btnSave.Size = new Size(75, 23);
-            btnSave.TabIndex = 13;
-            btnSave.Text = "Save";
-            btnSave.UseVisualStyleBackColor = true;
-            btnSave.Click += btnSave_Click_1;
-            // 
             // UserControlMarkAttendance
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -203,9 +225,12 @@ namespace Attendance_Management_System.Forms
         private DateTimePicker dateTimePicker1;
         private Label label3;
         private ComboBox comboBoxClass;
-        private EventHandler comboBoxClass_SelectedIndexChanged;
+      //  private EventHandler comboBoxClass_SelectedIndexChanged;
         private TabPage tabPage1;
         private DataGridView dataGridViewMarkAttendance;
         private Button btnSave;
+        private DataGridViewTextBoxColumn id;
+        private DataGridViewTextBoxColumn name;
+        private DataGridViewCheckBoxColumn status;
     }
 }

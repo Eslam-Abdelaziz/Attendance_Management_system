@@ -1,5 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Classes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="classes_shcema.xsd">
+<?xml version="1.0" encoding="utf-8"?>
+<Classes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="classes_schema.xsd">
   <Class>
     <ID>1</ID>
     <Name>Maths</Name>
