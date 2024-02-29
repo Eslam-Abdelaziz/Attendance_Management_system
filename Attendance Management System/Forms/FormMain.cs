@@ -7,7 +7,8 @@ namespace Attendance_Management_system
 {
     public partial class FormMain : Form
     {
-
+        private string Username = "Admin";
+        private string Role = "Admin";
         private void buttonLogOut_Click(object sender, EventArgs e)
         {
             DialogResult dialogResult = MessageBox.Show("Do you want to Log Out?", "Log Out", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -22,18 +23,10 @@ namespace Attendance_Management_system
 
         private void FormMain_Load(object sender, EventArgs e)
         {
-            /*  panelExpand.Hide();*/
+            panelExpand.Hide();
             panelExpand.Visible = false;
-            /*            labelUsername.Text = Username;
-                        labelRole.Text = Role;
-
-                        if (labelRole == "Student")
-                        {
-                            buttonDashboard.Hide();
-                            buttonAddClass.Hide();
-                            buttonAddStudent.Hide();
-                            buttonRegister.Hide();
-                        }*/
+                 labelUsername.Text = Username;
+                 labelRole.Text = Role;
         }
 
         private void buttonMinimize_Click(object sender, EventArgs e)

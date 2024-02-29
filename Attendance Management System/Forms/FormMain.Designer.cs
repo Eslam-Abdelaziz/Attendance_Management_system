@@ -451,6 +451,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Attendance Management System";
             WindowState = FormWindowState.Maximized;
+            Load += FormMain_Load;
             panel1.ResumeLayout(false);
             panel4.ResumeLayout(false);
             panel2.ResumeLayout(false);
