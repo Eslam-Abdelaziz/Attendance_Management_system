@@ -99,7 +99,7 @@
             buttonRegister.Name = "buttonRegister";
             buttonRegister.Size = new Size(250, 47);
             buttonRegister.TabIndex = 0;
-            buttonRegister.Text = "Register";
+            buttonRegister.Text = "Attendance";
             buttonRegister.UseVisualStyleBackColor = true;
             buttonRegister.Click += buttonRegister_Click;
             // 
@@ -205,7 +205,7 @@
             // 
             label2.AutoSize = true;
             label2.ForeColor = Color.White;
-            label2.Location = new Point(97, 125);
+            label2.Location = new Point(81, 142);
             label2.Name = "label2";
             label2.Size = new Size(79, 23);
             label2.TabIndex = 2;
@@ -215,7 +215,7 @@
             // 
             label1.AutoSize = true;
             label1.ForeColor = Color.White;
-            label1.Location = new Point(23, 106);
+            label1.Location = new Point(0, 103);
             label1.Name = "label1";
             label1.Size = new Size(264, 23);
             label1.TabIndex = 1;
