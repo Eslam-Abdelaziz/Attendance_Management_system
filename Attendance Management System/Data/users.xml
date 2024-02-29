@@ -79,4 +79,11 @@
     <Password>12083Klass</Password>
     <Class>Maths</Class>
   </Teacher>
+  <Student>
+    <Name>Eslam</Name>
+    <ID>15</ID>
+    <Email>Eslam@iti.com</Email>
+    <Password>ameslam123</Password>
+    <Class>Maths</Class>
+  </Student>
 </Users>
