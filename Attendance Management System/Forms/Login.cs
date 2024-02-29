@@ -1,4 +1,5 @@
-﻿using Attendance_Management_System.Classes;
+﻿using Attendance_Management_system;
+using Attendance_Management_System.Classes;
 namespace Attendance_Management_System.Forms
 {
     public partial class Login : Form
@@ -67,15 +68,15 @@ namespace Attendance_Management_System.Forms
             string pass = textBoxPassword.Text.Trim();
             if (username != string.Empty && pass != string.Empty && UserValidation.IsValidNamePass(username,pass) != null)
             {
+                FormMain mainForm = new FormMain();
                 textBoxName.Clear();
                 textBoxPassword.Clear();
                 pictureBoxHide_click(sender, e);
                 textBoxName.Focus();
                 pictureBoxError.Hide();
                 labelError.Hide();
+                mainForm.ShowDialog();
                 Close();
-                //MainForm mainForm = new MainForm();
-                //mainForm.ShowDialog();
             }
             else
             {
