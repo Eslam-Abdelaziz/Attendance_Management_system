@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Users xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="users_schema.xsd">
   <Admin>
     <Name>Admin User</Name>
@@ -29,7 +29,6 @@
     <Email>emma.watson@example.com</Email>
     <Password>studentpass</Password>
     <Class>Maths</Class>
-    <Status>present</Status>
   </Student>
   <Student>
     <Name>Michael Brown</Name>
@@ -79,6 +78,6 @@
     <Email>Maxon@gmail.com</Email>
     <Password>12083Klass</Password>
     <Class>Maths</Class>
-    <Status>absent</Status>
+    
   </Student>
 </Users>

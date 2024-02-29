@@ -63,36 +63,6 @@
       <status>present</status>
     </record>
     <record>
-      <id>103</id>
-      <name>New Student</name>
-      <date>2024-02-29</date>
-      <status>present</status>
-    </record>
-    <record>
-      <id>12</id>
-      <name>Ahmed</name>
-      <date>2024-02-29</date>
-      <status>absent</status>
-    </record>
-    <record>
-      <id>99</id>
-      <name>King</name>
-      <date>2024-02-29</date>
-      <status>present</status>
-    </record>
-    <record>
-      <id>103</id>
-      <name>New Student</name>
-      <date>2024-02-29</date>
-      <status>present</status>
-    </record>
-    <record>
-      <id>12</id>
-      <name>Ahmed</name>
-      <date>2024-02-29</date>
-      <status>absent</status>
-    </record>
-    <record>
       <id>99</id>
       <name>King</name>
       <date>2024-02-29</date>
@@ -115,6 +85,24 @@
     <record>
       <id>99</id>
       <name>King</name>
+      <date>2024-02-29</date>
+      <status>absent</status>
+    </record>
+    <record>
+      <id>102</id>
+      <name>Michael Brown</name>
+      <date>2024-02-29</date>
+      <status>present</status>
+    </record>
+    <record>
+      <id>104</id>
+      <name>Ahmed</name>
+      <date>2024-02-29</date>
+      <status>present</status>
+    </record>
+    <record>
+      <id>120</id>
+      <name>khaled</name>
       <date>2024-02-29</date>
       <status>absent</status>
     </record>
