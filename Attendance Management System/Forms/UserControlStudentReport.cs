@@ -10,29 +10,19 @@ using System.Windows.Forms;
 
 namespace Attendance_Management_System.Forms
 {
-    public partial class UserControlTeacherReport : UserControl
+    public partial class UserControlStudentReport : UserControl
     {
-        public UserControlTeacherReport()
+        public UserControlStudentReport()
         {
             InitializeComponent();
         }
 
-        private void userControlMarkAttendance1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void UserControlTeacherReport_Load(object sender, EventArgs e)
+        private void pictureBoxPrint_Hover(object sender, EventArgs e)
         {
 
         }
 
         private void pictureBoxPrint_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBoxPrint_Hover(object sender, EventArgs e)
         {
 
         }

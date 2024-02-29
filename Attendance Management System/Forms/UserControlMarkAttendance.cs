@@ -74,11 +74,11 @@ namespace Attendance_Management_System.Forms
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            
+
         }
 
 
-        
+
         private void btnSave_Click_1(object sender, EventArgs e)
         {
             // Get selected date from DateTimePicker
@@ -100,6 +100,21 @@ namespace Attendance_Management_System.Forms
             );
             doc.Save(xmlFilePath);
             MessageBox.Show("Attendance saved successfully.");
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage1_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }
