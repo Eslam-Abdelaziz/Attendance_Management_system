@@ -1,6 +1,6 @@
 ﻿namespace Attendance_Management_System.Forms
 {
-    partial class UserControlTeacherReport
+    partial class UserControlStudentReport
     {
         /// <summary> 
         /// Required designer variable.
@@ -29,12 +29,11 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserControlTeacherReport));
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserControlStudentReport));
             tabControl1 = new TabControl();
             tabPageMarkAttendence = new TabPage();
-            pictureBoxPrint = new PictureBox();
             tabControl2 = new TabControl();
             tabPage1 = new TabPage();
             dataGridView1 = new DataGridView();
@@ -50,27 +49,25 @@
             label5 = new Label();
             label6 = new Label();
             dataGridViewStudent = new DataGridView();
-            Column1 = new DataGridViewTextBoxColumn();
-            Column2 = new DataGridViewTextBoxColumn();
-            Column3 = new DataGridViewTextBoxColumn();
-            Date = new DataGridViewTextBoxColumn();
             dataGridViewMarkAttendance = new DataGridView();
-            comboBoxClass = new ComboBox();
-            label3 = new Label();
             dateTimePicker1 = new DateTimePicker();
             panel6 = new Panel();
             label2 = new Label();
             label1 = new Label();
+            Column2 = new DataGridViewTextBoxColumn();
+            Column3 = new DataGridViewTextBoxColumn();
+            Date = new DataGridViewTextBoxColumn();
+            pictureBoxPrint = new PictureBox();
             toolTip = new ToolTip(components);
             tabControl1.SuspendLayout();
             tabPageMarkAttendence.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBoxPrint).BeginInit();
             tabControl2.SuspendLayout();
             tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridViewStudent).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridViewMarkAttendance).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxPrint).BeginInit();
             SuspendLayout();
             // 
             // tabControl1
@@ -80,10 +77,10 @@
             tabControl1.Anchor = AnchorStyles.None;
             tabControl1.Controls.Add(tabPageMarkAttendence);
             tabControl1.Font = new Font("Segoe UI", 10F);
-            tabControl1.Location = new Point(33, 35);
+            tabControl1.Location = new Point(90, 77);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(1168, 568);
+            tabControl1.Size = new Size(1160, 538);
             tabControl1.TabIndex = 1;
             // 
             // tabPageMarkAttendence
@@ -92,8 +89,6 @@
             tabPageMarkAttendence.Controls.Add(tabControl2);
             tabPageMarkAttendence.Controls.Add(dataGridViewStudent);
             tabPageMarkAttendence.Controls.Add(dataGridViewMarkAttendance);
-            tabPageMarkAttendence.Controls.Add(comboBoxClass);
-            tabPageMarkAttendence.Controls.Add(label3);
             tabPageMarkAttendence.Controls.Add(dateTimePicker1);
             tabPageMarkAttendence.Controls.Add(panel6);
             tabPageMarkAttendence.Controls.Add(label2);
@@ -101,24 +96,10 @@
             tabPageMarkAttendence.Location = new Point(4, 4);
             tabPageMarkAttendence.Name = "tabPageMarkAttendence";
             tabPageMarkAttendence.Padding = new Padding(3);
-            tabPageMarkAttendence.Size = new Size(1160, 538);
+            tabPageMarkAttendence.Size = new Size(1152, 508);
             tabPageMarkAttendence.TabIndex = 0;
-            tabPageMarkAttendence.Text = "Class Report";
+            tabPageMarkAttendence.Text = "Student Report";
             tabPageMarkAttendence.UseVisualStyleBackColor = true;
-            // 
-            // pictureBoxPrint
-            // 
-            pictureBoxPrint.Anchor = AnchorStyles.None;
-            pictureBoxPrint.Cursor = Cursors.Hand;
-            pictureBoxPrint.Image = (Image)resources.GetObject("pictureBoxPrint.Image");
-            pictureBoxPrint.Location = new Point(1072, 1);
-            pictureBoxPrint.Name = "pictureBoxPrint";
-            pictureBoxPrint.Size = new Size(87, 65);
-            pictureBoxPrint.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBoxPrint.TabIndex = 16;
-            pictureBoxPrint.TabStop = false;
-            pictureBoxPrint.Click += pictureBoxPrint_Click;
-            pictureBoxPrint.MouseHover += pictureBoxPrint_Hover;
             // 
             // tabControl2
             // 
@@ -127,10 +108,10 @@
             tabControl2.Anchor = AnchorStyles.None;
             tabControl2.Controls.Add(tabPage1);
             tabControl2.Font = new Font("Segoe UI", 10F);
-            tabControl2.Location = new Point(1029, 832);
+            tabControl2.Location = new Point(1025, 817);
             tabControl2.Name = "tabControl2";
             tabControl2.SelectedIndex = 0;
-            tabControl2.Size = new Size(513, 115);
+            tabControl2.Size = new Size(1160, 538);
             tabControl2.TabIndex = 1;
             // 
             // tabPage1
@@ -146,7 +127,7 @@
             tabPage1.Location = new Point(4, 4);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(505, 85);
+            tabPage1.Size = new Size(1152, 508);
             tabPage1.TabIndex = 1;
             tabPage1.Text = "Mark Attendence";
             tabPage1.UseVisualStyleBackColor = true;
@@ -160,24 +141,24 @@
             dataGridView1.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, dataGridViewTextBoxColumn2, dataGridViewTextBoxColumn3, dataGridViewTextBoxColumn4 });
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = SystemColors.Window;
-            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle3.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
-            dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Window;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle1.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
+            dataGridView1.DefaultCellStyle = dataGridViewCellStyle1;
             dataGridView1.Location = new Point(0, 173);
             dataGridView1.Name = "dataGridView1";
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = SystemColors.Control;
-            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle4.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
-            dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Control;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dataGridView1.ScrollBars = ScrollBars.Vertical;
             dataGridView1.Size = new Size(1103, 406);
             dataGridView1.TabIndex = 14;
@@ -278,33 +259,12 @@
             dataGridViewStudent.BackgroundColor = Color.White;
             dataGridViewStudent.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             dataGridViewStudent.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewStudent.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Date });
-            dataGridViewStudent.Location = new Point(-1, 173);
+            dataGridViewStudent.Columns.AddRange(new DataGridViewColumn[] { Column2, Column3, Date });
+            dataGridViewStudent.Location = new Point(0, 173);
             dataGridViewStudent.Name = "dataGridViewStudent";
             dataGridViewStudent.ScrollBars = ScrollBars.Vertical;
-            dataGridViewStudent.Size = new Size(1161, 362);
+            dataGridViewStudent.Size = new Size(1152, 300);
             dataGridViewStudent.TabIndex = 14;
-            // 
-            // Column1
-            // 
-            Column1.HeaderText = "Class";
-            Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            Column2.HeaderText = "Student Name";
-            Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            Column3.HeaderText = "Date";
-            Column3.Name = "Column3";
-            Column3.Resizable = DataGridViewTriState.True;
-            // 
-            // Date
-            // 
-            Date.HeaderText = "Status";
-            Date.Name = "Date";
             // 
             // dataGridViewMarkAttendance
             // 
@@ -319,27 +279,6 @@
             dataGridViewMarkAttendance.ScrollBars = ScrollBars.Vertical;
             dataGridViewMarkAttendance.Size = new Size(935, 150);
             dataGridViewMarkAttendance.TabIndex = 12;
-            // 
-            // comboBoxClass
-            // 
-            comboBoxClass.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBoxClass.FlatStyle = FlatStyle.Flat;
-            comboBoxClass.Font = new Font("Segoe UI", 10F);
-            comboBoxClass.FormattingEnabled = true;
-            comboBoxClass.Location = new Point(597, 74);
-            comboBoxClass.Name = "comboBoxClass";
-            comboBoxClass.Size = new Size(270, 25);
-            comboBoxClass.TabIndex = 9;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 10.5F);
-            label3.Location = new Point(597, 49);
-            label3.Name = "label3";
-            label3.Size = new Size(40, 19);
-            label3.TabIndex = 8;
-            label3.Text = "Class";
             // 
             // dateTimePicker1
             // 
@@ -376,20 +315,51 @@
             label1.Name = "label1";
             label1.Size = new Size(148, 19);
             label1.TabIndex = 0;
-            label1.Text = "Class Report";
+            label1.Text = "Student Report";
             // 
-            // UserControlTeacherReport
+            // Column2
+            // 
+            Column2.DataPropertyName = "Student_Name";
+            Column2.HeaderText = "Student Name";
+            Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            Column3.DataPropertyName = "Date";
+            Column3.HeaderText = "Date";
+            Column3.Name = "Column3";
+            Column3.Resizable = DataGridViewTriState.True;
+            // 
+            // Date
+            // 
+            Date.DataPropertyName = "Status";
+            Date.HeaderText = "Status";
+            Date.Name = "Date";
+            // 
+            // pictureBoxPrint
+            // 
+            pictureBoxPrint.Anchor = AnchorStyles.None;
+            pictureBoxPrint.Cursor = Cursors.Hand;
+            pictureBoxPrint.Image = (Image)resources.GetObject("pictureBoxPrint.Image");
+            pictureBoxPrint.Location = new Point(1064, 1);
+            pictureBoxPrint.Name = "pictureBoxPrint";
+            pictureBoxPrint.Size = new Size(87, 65);
+            pictureBoxPrint.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBoxPrint.TabIndex = 15;
+            pictureBoxPrint.TabStop = false;
+            pictureBoxPrint.Click += pictureBoxPrint_Click;
+            pictureBoxPrint.MouseHover += pictureBoxPrint_Hover;
+            // 
+            // UserControlStudentReport
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(tabControl1);
-            Name = "UserControlTeacherReport";
-            Size = new Size(1289, 710);
-            Load += UserControlTeacherReport_Load;
+            Name = "UserControlStudentReport";
+            Size = new Size(1355, 776);
             tabControl1.ResumeLayout(false);
             tabPageMarkAttendence.ResumeLayout(false);
             tabPageMarkAttendence.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBoxPrint).EndInit();
             tabControl2.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
             tabPage1.PerformLayout();
@@ -397,6 +367,7 @@
             ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridViewStudent).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridViewMarkAttendance).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxPrint).EndInit();
             ResumeLayout(false);
         }
 
@@ -420,13 +391,10 @@
         private Label label6;
         private DataGridView dataGridViewStudent;
         private DataGridView dataGridViewMarkAttendance;
-        private ComboBox comboBoxClass;
-        private Label label3;
         private DateTimePicker dateTimePicker1;
         private Panel panel6;
         private Label label2;
         private Label label1;
-        private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column3;
         private DataGridViewTextBoxColumn Date;
