@@ -106,5 +106,23 @@
       <date>2024-02-29</date>
       <status>absent</status>
     </record>
+    <record>
+      <id>102</id>
+      <name>Michael Brown</name>
+      <date>2024-03-02</date>
+      <status>absent</status>
+    </record>
+    <record>
+      <id>104</id>
+      <name>Ahmed</name>
+      <date>2024-03-02</date>
+      <status>present</status>
+    </record>
+    <record>
+      <id>120</id>
+      <name>khaled</name>
+      <date>2024-03-02</date>
+      <status>absent</status>
+    </record>
   </class>
 </attendance>
