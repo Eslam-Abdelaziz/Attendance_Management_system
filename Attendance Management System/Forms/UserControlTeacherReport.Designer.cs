@@ -49,12 +49,11 @@
             panel2 = new Panel();
             label5 = new Label();
             label6 = new Label();
-            dataGridViewStudent = new DataGridView();
+            dataGridViewTeacherReport = new DataGridView();
             Column1 = new DataGridViewTextBoxColumn();
             Column2 = new DataGridViewTextBoxColumn();
             Column3 = new DataGridViewTextBoxColumn();
             Date = new DataGridViewTextBoxColumn();
-            dataGridViewMarkAttendance = new DataGridView();
             comboBoxClass = new ComboBox();
             label3 = new Label();
             dateTimePicker1 = new DateTimePicker();
@@ -62,6 +61,8 @@
             label2 = new Label();
             label1 = new Label();
             toolTip = new ToolTip(components);
+            ExportPdf_Button = new Button();
+            ExportExcel_Button = new Button();
             tabControl1.SuspendLayout();
             tabPageMarkAttendence.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxPrint).BeginInit();
@@ -69,8 +70,7 @@
             tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridViewStudent).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridViewMarkAttendance).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewTeacherReport).BeginInit();
             SuspendLayout();
             // 
             // tabControl1
@@ -90,8 +90,7 @@
             // 
             tabPageMarkAttendence.Controls.Add(pictureBoxPrint);
             tabPageMarkAttendence.Controls.Add(tabControl2);
-            tabPageMarkAttendence.Controls.Add(dataGridViewStudent);
-            tabPageMarkAttendence.Controls.Add(dataGridViewMarkAttendance);
+            tabPageMarkAttendence.Controls.Add(dataGridViewTeacherReport);
             tabPageMarkAttendence.Controls.Add(comboBoxClass);
             tabPageMarkAttendence.Controls.Add(label3);
             tabPageMarkAttendence.Controls.Add(dateTimePicker1);
@@ -270,20 +269,20 @@
             label6.TabIndex = 0;
             label6.Text = "Mark Attendence";
             // 
-            // dataGridViewStudent
+            // dataGridViewTeacherReport
             // 
-            dataGridViewStudent.AllowUserToAddRows = false;
-            dataGridViewStudent.AllowUserToDeleteRows = false;
-            dataGridViewStudent.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewStudent.BackgroundColor = Color.White;
-            dataGridViewStudent.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewStudent.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewStudent.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Date });
-            dataGridViewStudent.Location = new Point(-1, 173);
-            dataGridViewStudent.Name = "dataGridViewStudent";
-            dataGridViewStudent.ScrollBars = ScrollBars.Vertical;
-            dataGridViewStudent.Size = new Size(1161, 362);
-            dataGridViewStudent.TabIndex = 14;
+            dataGridViewTeacherReport.AllowUserToAddRows = false;
+            dataGridViewTeacherReport.AllowUserToDeleteRows = false;
+            dataGridViewTeacherReport.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewTeacherReport.BackgroundColor = Color.White;
+            dataGridViewTeacherReport.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            dataGridViewTeacherReport.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewTeacherReport.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Date });
+            dataGridViewTeacherReport.Location = new Point(-1, 183);
+            dataGridViewTeacherReport.Name = "dataGridViewTeacherReport";
+            dataGridViewTeacherReport.ScrollBars = ScrollBars.Vertical;
+            dataGridViewTeacherReport.Size = new Size(1161, 352);
+            dataGridViewTeacherReport.TabIndex = 14;
             // 
             // Column1
             // 
@@ -306,20 +305,6 @@
             Date.HeaderText = "Status";
             Date.Name = "Date";
             // 
-            // dataGridViewMarkAttendance
-            // 
-            dataGridViewMarkAttendance.AllowUserToAddRows = false;
-            dataGridViewMarkAttendance.AllowUserToDeleteRows = false;
-            dataGridViewMarkAttendance.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewMarkAttendance.BackgroundColor = Color.White;
-            dataGridViewMarkAttendance.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewMarkAttendance.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewMarkAttendance.Location = new Point(-1, 173);
-            dataGridViewMarkAttendance.Name = "dataGridViewMarkAttendance";
-            dataGridViewMarkAttendance.ScrollBars = ScrollBars.Vertical;
-            dataGridViewMarkAttendance.Size = new Size(935, 150);
-            dataGridViewMarkAttendance.TabIndex = 12;
-            // 
             // comboBoxClass
             // 
             comboBoxClass.DropDownStyle = ComboBoxStyle.DropDownList;
@@ -330,6 +315,7 @@
             comboBoxClass.Name = "comboBoxClass";
             comboBoxClass.Size = new Size(270, 25);
             comboBoxClass.TabIndex = 9;
+            comboBoxClass.SelectedIndexChanged += ComboBoxClass_SelectedIndexChanged;
             // 
             // label3
             // 
@@ -378,10 +364,44 @@
             label1.TabIndex = 0;
             label1.Text = "Class Report";
             // 
+            // ExportPdf_Button
+            // 
+            ExportPdf_Button.BackColor = SystemColors.InactiveCaption;
+            ExportPdf_Button.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            ExportPdf_Button.ForeColor = Color.FromArgb(250, 50, 50);
+            ExportPdf_Button.Image = (Image)resources.GetObject("ExportPdf_Button.Image");
+            ExportPdf_Button.Location = new Point(915, 609);
+            ExportPdf_Button.Name = "ExportPdf_Button";
+            ExportPdf_Button.Size = new Size(132, 41);
+            ExportPdf_Button.TabIndex = 2;
+            ExportPdf_Button.Text = "Export Pdf";
+            ExportPdf_Button.TextAlign = ContentAlignment.MiddleLeft;
+            ExportPdf_Button.TextImageRelation = TextImageRelation.TextBeforeImage;
+            ExportPdf_Button.UseVisualStyleBackColor = false;
+            ExportPdf_Button.Click += ExportPdf_Button_click;
+            // 
+            // ExportExcel_Button
+            // 
+            ExportExcel_Button.BackColor = SystemColors.InactiveCaption;
+            ExportExcel_Button.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            ExportExcel_Button.ForeColor = Color.FromArgb(29, 111, 66);
+            ExportExcel_Button.Image = Properties.Resources.excel;
+            ExportExcel_Button.Location = new Point(1060, 609);
+            ExportExcel_Button.Name = "ExportExcel_Button";
+            ExportExcel_Button.Size = new Size(132, 41);
+            ExportExcel_Button.TabIndex = 3;
+            ExportExcel_Button.Text = "Export Excel";
+            ExportExcel_Button.TextAlign = ContentAlignment.MiddleLeft;
+            ExportExcel_Button.TextImageRelation = TextImageRelation.TextBeforeImage;
+            ExportExcel_Button.UseVisualStyleBackColor = false;
+            ExportExcel_Button.Click += ExportExcel_Button_Click;
+            // 
             // UserControlTeacherReport
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(ExportExcel_Button);
+            Controls.Add(ExportPdf_Button);
             Controls.Add(tabControl1);
             Name = "UserControlTeacherReport";
             Size = new Size(1289, 710);
@@ -395,8 +415,7 @@
             tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridViewStudent).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridViewMarkAttendance).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewTeacherReport).EndInit();
             ResumeLayout(false);
         }
 
@@ -418,8 +437,7 @@
         private Panel panel2;
         private Label label5;
         private Label label6;
-        private DataGridView dataGridViewStudent;
-        private DataGridView dataGridViewMarkAttendance;
+        private DataGridView dataGridViewTeacherReport;
         private ComboBox comboBoxClass;
         private Label label3;
         private DateTimePicker dateTimePicker1;
@@ -432,5 +450,7 @@
         private DataGridViewTextBoxColumn Date;
         private PictureBox pictureBoxPrint;
         private ToolTip toolTip;
+        private Button ExportPdf_Button;
+        private Button ExportExcel_Button;
     }
 }
